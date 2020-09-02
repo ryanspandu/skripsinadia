@@ -41,6 +41,7 @@ $(document).ready(function(){
         var x = x;
         var sum = sum;
         var hasil = x / sum;
+        // hasil = Math.round(hasil);
         return hasil;
     }
 
@@ -154,14 +155,15 @@ $(document).ready(function(){
             input += '<div class="col-12">';
                 input += '<p class="font-weight-bold">Normalisasi</p>';
             input += '</div';
-        input += '<p class="font-weight-bold">Normalisasi</p>';
-        // kolom mutu kerja
+        // kolom mutu_kerja
+        input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom mutu kerja</p></div>';
         var mk_k = mutu_kerja_data.length - 1;
         var k = 1;
+        var l = 1;
         for(var i=0; i<kode.length; i++){
             input += '<div class="col-12 mb-3">';
                 input += '<p class="mb-0">';
-                input += 'x'+ k++ +'1 = '+ mutu_kerja_data[i] +' / &radic;';
+                input += 'k'+ k++ +'1 = '+ mutu_kerja_data[i] +' / &radic;';
                 for(var j=0; j<mk_k; j++){
                     input += mutu_kerja_data[j]+'&sup2; + ';
                     if(j+2 == mutu_kerja_data.length){
@@ -169,6 +171,83 @@ $(document).ready(function(){
                     }
                 }
                 input += '</p>';
+                input += '<p>k'+ l++ +'1 = '+ mutu_kerja_normalisasi[i] +'</p>';
+            input += '</div>';
+        }
+        // kolom tanggung_jawab
+        input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom tanggung jawab</p></div>';
+        var mk_k = tanggung_jawab_data.length - 1;
+        var k = 1;
+        var l = 1;
+        for(var i=0; i<kode.length; i++){
+            input += '<div class="col-12 mb-3">';
+                input += '<p class="mb-0">';
+                input += 'k'+ k++ +'2 = '+ tanggung_jawab_data[i] +' / &radic;';
+                for(var j=0; j<mk_k; j++){
+                    input += tanggung_jawab_data[j]+'&sup2; + ';
+                    if(j+2 == tanggung_jawab_data.length){
+                        input += tanggung_jawab_data[j+1]+'&sup2;';
+                    }
+                }
+                input += '</p>';
+                input += '<p>k'+ l++ +'2 = '+ tanggung_jawab_normalisasi[i] +'</p>';
+            input += '</div>';
+        }
+        // kolom inisiatif
+        input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom inisiatif</p></div>';
+        var mk_k = inisiatif_data.length - 1;
+        var k = 1;
+        var l = 1;
+        for(var i=0; i<kode.length; i++){
+            input += '<div class="col-12 mb-3">';
+                input += '<p class="mb-0">';
+                input += 'k'+ k++ +'3 = '+ inisiatif_data[i] +' / &radic;';
+                for(var j=0; j<mk_k; j++){
+                    input += inisiatif_data[j]+'&sup2; + ';
+                    if(j+2 == inisiatif_data.length){
+                        input += inisiatif_data[j+1]+'&sup2;';
+                    }
+                }
+                input += '</p>';
+                input += '<p>k'+ l++ +'3 = '+ inisiatif_normalisasi[i] +'</p>';
+            input += '</div>';
+        }
+        // kolom kejujuran
+        input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom kejujuran</p></div>';
+        var mk_k = kejujuran_data.length - 1;
+        var k = 1;
+        var l = 1;
+        for(var i=0; i<kode.length; i++){
+            input += '<div class="col-12 mb-3">';
+                input += '<p class="mb-0">';
+                input += 'k'+ k++ +'4 = '+ kejujuran_data[i] +' / &radic;';
+                for(var j=0; j<mk_k; j++){
+                    input += kejujuran_data[j]+'&sup2; + ';
+                    if(j+2 == kejujuran_data.length){
+                        input += kejujuran_data[j+1]+'&sup2;';
+                    }
+                }
+                input += '</p>';
+                input += '<p>k'+ l++ +'4 = '+ kejujuran_normalisasi[i] +'</p>';
+            input += '</div>';
+        }
+        // kolom absensi
+        input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom absensi</p></div>';
+        var mk_k = absensi_data.length - 1;
+        var k = 1;
+        var l = 1;
+        for(var i=0; i<kode.length; i++){
+            input += '<div class="col-12 mb-3">';
+                input += '<p class="mb-0">';
+                input += 'k'+ k++ +'5 = '+ absensi_data[i] +' / &radic;';
+                for(var j=0; j<mk_k; j++){
+                    input += absensi_data[j]+'&sup2; + ';
+                    if(j+2 == absensi_data.length){
+                        input += absensi_data[j+1]+'&sup2;';
+                    }
+                }
+                input += '</p>';
+                input += '<p>k'+ l++ +'5 = '+ absensi_normalisasi[i] +'</p>';
             input += '</div>';
         }
     
