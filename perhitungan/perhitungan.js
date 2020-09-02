@@ -143,4 +143,35 @@ $(document).ready(function(){
     hasil.sort(perbandingan);
 
     console.log("Rangking : "+hasil);
+
+    // =========================================================
+    // INPUT KE HTML
+    // =========================================================
+
+
+    var input = "";
+        input += '<div class="row">';
+            input += '<div class="col-12">';
+                input += '<p class="font-weight-bold">Normalisasi</p>';
+            input += '</div';
+        input += '<p class="font-weight-bold">Normalisasi</p>';
+        // kolom mutu kerja
+        var mk_k = mutu_kerja_data.length - 1;
+        var k = 1;
+        for(var i=0; i<kode.length; i++){
+            input += '<div class="col-12 mb-3">';
+                input += '<p class="mb-0">';
+                input += 'x'+ k++ +'1 = '+ mutu_kerja_data[i] +' / &radic;';
+                for(var j=0; j<mk_k; j++){
+                    input += mutu_kerja_data[j]+'&sup2; + ';
+                    if(j+2 == mutu_kerja_data.length){
+                        input += mutu_kerja_data[j+1]+'&sup2;';
+                    }
+                }
+                input += '</p>';
+            input += '</div>';
+        }
+    
+    $('#moora-data').append(input);
+
 });

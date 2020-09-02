@@ -81,8 +81,8 @@
                 <button class="moora-btn btn-lg btn-success float-right">JALANKAN MOORA</button>
             </div>
         </div>
-        <div id="moora-data" class="row mt-4">
-
+        <div id="moora-data" class="row mt-4 mb-5">
+        
         </div>
     </div>
 </body>
