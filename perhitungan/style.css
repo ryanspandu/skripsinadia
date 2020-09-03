@@ -1,0 +1,4 @@
+.table-custom, .table-custom tr, .table-custom th, .table-custom td{
+    border: 1px solid black;
+    padding: 14px;
+}

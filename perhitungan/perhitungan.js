@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var d_count = $('table tbody tr').length;
+    var d_count = $('.table-data tr').length;
     var kode = [];
     var nama = [];
     var mutu_kerja_data = [];
@@ -9,13 +9,13 @@ $(document).ready(function(){
     var absensi_data = [];
 
     for(var i=1; i<=d_count; i++){
-        kode.push(parseInt($('table tbody tr:nth-child('+ i +') td:nth-child(2)').html()));
-        nama.push(parseInt($('table tbody tr:nth-child('+ i +') td:nth-child(3)').html()));
-        mutu_kerja_data.push(parseInt($('table tbody tr:nth-child('+ i +') td:nth-child(4)').html()));
-        tanggung_jawab_data.push(parseInt($('table tbody tr:nth-child('+ i +') td:nth-child(5)').html()));
-        inisiatif_data.push(parseInt($('table tbody tr:nth-child('+ i +') td:nth-child(6)').html()));
-        kejujuran_data.push(parseInt($('table tbody tr:nth-child('+ i +') td:nth-child(7)').html()));
-        absensi_data.push(parseInt($('table tbody tr:nth-child('+ i +') td:nth-child(8)').html()));
+        kode.push(parseInt($('.table-data tr:nth-child('+ i +') td:nth-child(2)').html()));
+        nama.push(parseInt($('.table-data tr:nth-child('+ i +') td:nth-child(3)').html()));
+        mutu_kerja_data.push(parseInt($('.table-data tr:nth-child('+ i +') td:nth-child(4)').html()));
+        tanggung_jawab_data.push(parseInt($('.table-data tr:nth-child('+ i +') td:nth-child(5)').html()));
+        inisiatif_data.push(parseInt($('.table-data tr:nth-child('+ i +') td:nth-child(6)').html()));
+        kejujuran_data.push(parseInt($('.table-data tr:nth-child('+ i +') td:nth-child(7)').html()));
+        absensi_data.push(parseInt($('.table-data tr:nth-child('+ i +') td:nth-child(8)').html()));
     }
 
     // console.log(absensi_data);
@@ -252,5 +252,23 @@ $(document).ready(function(){
         }
     
     $('#moora-data').append(input);
+
+    // Input data ke table 
+    var inputTable = '';
+        inputTable += '<table style="width:50%;" class="table-custom">';
+            inputTable += '<tr> <th></th> <th style="font-size:10px;">Mutu Kerja</th> <th style="font-size:10px;">Tanggung Jawab</th> <th style="font-size:10px;">Inisiatif</th> <th style="font-size:10px;">Kejujuran</th> <th style="font-size:10px;">Absensi</th> </tr>';
+            var k = 1;
+            for(var i=0; i<kode.length; i++){
+                inputTable += '<tr>'; 
+                    inputTable += '<td style="font-size: 10px;">K'+ k++ +'</td>';
+                    inputTable += '<td style="font-size: 10px;">'+ mutu_kerja_normalisasi[i] +'</td>';
+                    inputTable += '<td style="font-size: 10px;">'+ tanggung_jawab_normalisasi[i] +'</td>';
+                    inputTable += '<td style="font-size: 10px;">'+ inisiatif_normalisasi[i] +'</td>';
+                    inputTable += '<td style="font-size: 10px;">'+ kejujuran_normalisasi[i] +'</td>';
+                    inputTable += '<td style="font-size: 10px;">'+ absensi_normalisasi[i] +'</td>';
+                inputTable += '</tr>'; 
+            }
+            
+    $('#moora-table').append(inputTable);
 
 });

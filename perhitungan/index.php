@@ -1,6 +1,8 @@
 <!DOCTYPE html> 
 <html>
 <head>
+    <link href="style.css"
+      rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +49,7 @@
                         <th scope="col">Hapus</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="table-data">
                     <?php
                         $data = mysqli_query($koneksi,"select * from pegawai");
                         $i = 1;
@@ -81,7 +83,12 @@
                 <button class="moora-btn btn-lg btn-success float-right">JALANKAN MOORA</button>
             </div>
         </div>
-        <div id="moora-data" class="row mt-4 mb-5">
+        
+        <div id="moora-data" class="row mt-4">
+        
+        </div>
+
+        <div id="moora-table" class="mt-2 mb-5">
         
         </div>
     </div>
