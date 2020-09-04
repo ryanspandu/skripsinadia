@@ -250,6 +250,7 @@ $(document).ready(function(){
                 input += '<p>k'+ l++ +'5 = '+ absensi_normalisasi[i] +'</p>';
             input += '</div>';
         }
+        input += '</div>';
     
     $('#moora-data').append(input);
 
@@ -271,4 +272,76 @@ $(document).ready(function(){
             
     $('#moora-table').append(inputTable);
 
+    // Input data 2 
+    var input2 = '';
+        input2 += '<div class="row">';
+        var k = 1;
+        var l = 1;
+        var m = 1;
+            for(var i=0; i<kode.length; i++){
+                input2 += '<div class="col-12">'; 
+                    input2 += '<p class="">K'+ l++ +' = '+ mutu_kerja_normalisasi[i] +' + '+ tanggung_jawab_normalisasi[i] +' + '+ inisiatif_normalisasi[i] +' + '+ kejujuran_normalisasi[i] +' + '+ absensi_normalisasi[i] +' = <span id="k'+ m++ +'">'+ hasil[i] +'</span></p>';
+                    input2 += '</div>';
+            }
+        input2 += '</div>';
+    $('#moora-data2').append(input2);
+
+    // Table rangking 
+    var inputRank = '';
+        inputRank += '<button onclick="sortTable()" class="mb-2">Perangkingan</button>'
+        inputRank += '<table id="myTable" style="width:50%;" class="table-custom">';
+        inputRank += '<tr><th style="font-size:10px;">No.</th><th style="font-size:10px;">Nama</th> <th style="font-size:10px;">Nilai</th> </tr>';
+        var j = 1;
+        var k = 1;
+        for(var i=0; i<kode.length; i++){
+            inputRank += '<tbody class="data-rank">';
+            inputRank += '<tr>'; 
+                inputRank += '<td></td>';
+                inputRank += '<td style="font-size: 10px;">'+ $('#nama'+j++).text() +'</td>';
+                inputRank += '<td style="font-size: 10px;">'+ hasil[i] +'</td>';
+            inputRank += '</tr>'; 
+            inputRank += '</tbody>';
+        }
+
+    $('#moora-rangking').append(inputRank);
+
+    // Mengurutkan
+    var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("myTable");
+        switching = true;
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+            /*Get the two elements you want to compare,
+            one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName("td")[2];
+            y = rows[i + 1].getElementsByTagName("td")[2];
+            //check if the two rows should switch place:
+            if (x.innerHTML < y.innerHTML) {
+                //if so, mark as a switch and break the loop:
+                shouldSwitch = true;
+                break;
+            }
+            }
+            if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            }
+        }
+
+        var j = 1;
+        for(var i=1; i<=kode.length; i++){
+            $('.data-rank tr:nth-child('+ i +') td:nth-child(1)').text(j++);
+        }
+    console.log('test : '+$('.data-rank tr').length);
 });

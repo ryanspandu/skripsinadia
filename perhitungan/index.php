@@ -53,12 +53,13 @@
                     <?php
                         $data = mysqli_query($koneksi,"select * from pegawai");
                         $i = 1;
+                        $j = 1;
                         while($d = mysqli_fetch_array($data)){ 
                     ?>
                       <tr>
                         <th scope="row"><?php echo $i++; ?></th>
                         <td><?php echo $d['kode']; ?></td>
-                        <td colspan="3"><?php echo $d['nama']; ?></td>
+                        <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                         <td><?php echo $d['mutu_kerja']; ?></td>
                         <td><?php echo $d['tanggung_jawab']; ?></td>
                         <td><?php echo $d['inisiatif']; ?></td>
@@ -88,10 +89,56 @@
         
         </div>
 
-        <div id="moora-table" class="mt-2 mb-5">
+        <div id="moora-table" class="mt-2 mb-2">
         
         </div>
+
+        <div id="moora-data2" class="row mt-4">
+        
+        </div>
+
+        <div id="moora-rangking" class="mt-4 mb-5">
+
+        </div>
+
     </div>
 </body>
 <script src="perhitungan.js"></script>
+<script>
+    function sortTable() {
+        // var table, rows, switching, i, x, y, shouldSwitch;
+        // table = document.getElementById("myTable");
+        // switching = true;
+        // /*Make a loop that will continue until
+        // no switching has been done:*/
+        // while (switching) {
+        //     //start by saying: no switching is done:
+        //     switching = false;
+        //     rows = table.rows;
+        //     /*Loop through all table rows (except the
+        //     first, which contains table headers):*/
+        //     for (i = 1; i < (rows.length - 1); i++) {
+        //     //start by saying there should be no switching:
+        //     shouldSwitch = false;
+        //     /*Get the two elements you want to compare,
+        //     one from current row and one from the next:*/
+        //     x = rows[i].getElementsByTagName("td")[2];
+        //     y = rows[i + 1].getElementsByTagName("td")[2];
+        //     //check if the two rows should switch place:
+        //     if (x.innerHTML < y.innerHTML) {
+        //         //if so, mark as a switch and break the loop:
+        //         shouldSwitch = true;
+        //         break;
+        //     }
+        //     }
+        //     if (shouldSwitch) {
+        //     /*If a switch has been marked, make the switch
+        //     and mark that a switch has been done:*/
+        //     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        //     switching = true;
+        //     }
+        // }
+    }
+    
+</script>
 </html>
