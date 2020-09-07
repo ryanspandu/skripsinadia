@@ -153,18 +153,18 @@ function moora(){
     
         var input = "";
             input += '<div class="row">';
-                input += '<div class="col-12">';
-                    input += '<p class="font-weight-bold">Normalisasi</p>';
-                input += '</div';
+                // input += '<div class="col-12">';
+                //     input += '<p class="font-weight-bold">Normalisasi</p>';
+                // input += '</div';
             // kolom mutu_kerja
-            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom mutu kerja</p></div>';
+            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi Kolom 1 (Kolom Kriteria ‘Mutu Kerja’)</p></div>';
             var mk_k = mutu_kerja_data.length - 1;
             var k = 1;
             var l = 1;
             for(var i=0; i<kode.length; i++){
                 input += '<div class="col-12 mb-3">';
                     input += '<p class="mb-0">';
-                    input += 'k'+ k++ +'1 = '+ mutu_kerja_data[i] +' / &radic;';
+                    input += 'x'+ k++ +'1 = '+ mutu_kerja_data[i] +' / &radic;';
                     for(var j=0; j<mk_k; j++){
                         input += mutu_kerja_data[j]+'&sup2; + ';
                         if(j+2 == mutu_kerja_data.length){
@@ -172,18 +172,18 @@ function moora(){
                         }
                     }
                     input += '</p>';
-                    input += '<p>k'+ l++ +'1 = '+ mutu_kerja_normalisasi[i] +'</p>';
+                    input += '<p>x'+ l++ +'1 = '+ mutu_kerja_normalisasi[i] +'</p>';
                 input += '</div>';
             }
             // kolom tanggung_jawab
-            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom tanggung jawab</p></div>';
+            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi Kolom 2 (Kolom Kriteria ‘Tanggung Jawab’)</p></div>';
             var mk_k = tanggung_jawab_data.length - 1;
             var k = 1;
             var l = 1;
             for(var i=0; i<kode.length; i++){
                 input += '<div class="col-12 mb-3">';
                     input += '<p class="mb-0">';
-                    input += 'k'+ k++ +'2 = '+ tanggung_jawab_data[i] +' / &radic;';
+                    input += 'x'+ k++ +'2 = '+ tanggung_jawab_data[i] +' / &radic;';
                     for(var j=0; j<mk_k; j++){
                         input += tanggung_jawab_data[j]+'&sup2; + ';
                         if(j+2 == tanggung_jawab_data.length){
@@ -191,18 +191,18 @@ function moora(){
                         }
                     }
                     input += '</p>';
-                    input += '<p>k'+ l++ +'2 = '+ tanggung_jawab_normalisasi[i] +'</p>';
+                    input += '<p>x'+ l++ +'2 = '+ tanggung_jawab_normalisasi[i] +'</p>';
                 input += '</div>';
             }
             // kolom inisiatif
-            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom inisiatif</p></div>';
+            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi Kolom 3 (Kolom Kriteria ‘Inisiatif’)</p></div>';
             var mk_k = inisiatif_data.length - 1;
             var k = 1;
             var l = 1;
             for(var i=0; i<kode.length; i++){
                 input += '<div class="col-12 mb-3">';
                     input += '<p class="mb-0">';
-                    input += 'k'+ k++ +'3 = '+ inisiatif_data[i] +' / &radic;';
+                    input += 'x'+ k++ +'3 = '+ inisiatif_data[i] +' / &radic;';
                     for(var j=0; j<mk_k; j++){
                         input += inisiatif_data[j]+'&sup2; + ';
                         if(j+2 == inisiatif_data.length){
@@ -210,18 +210,18 @@ function moora(){
                         }
                     }
                     input += '</p>';
-                    input += '<p>k'+ l++ +'3 = '+ inisiatif_normalisasi[i] +'</p>';
+                    input += '<p>x'+ l++ +'3 = '+ inisiatif_normalisasi[i] +'</p>';
                 input += '</div>';
             }
             // kolom kejujuran
-            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom kejujuran</p></div>';
+            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi Kolom 4 (Kolom Kriteria ‘Kejujuran’)</p></div>';
             var mk_k = kejujuran_data.length - 1;
             var k = 1;
             var l = 1;
             for(var i=0; i<kode.length; i++){
                 input += '<div class="col-12 mb-3">';
                     input += '<p class="mb-0">';
-                    input += 'k'+ k++ +'4 = '+ kejujuran_data[i] +' / &radic;';
+                    input += 'x'+ k++ +'4 = '+ kejujuran_data[i] +' / &radic;';
                     for(var j=0; j<mk_k; j++){
                         input += kejujuran_data[j]+'&sup2; + ';
                         if(j+2 == kejujuran_data.length){
@@ -229,18 +229,18 @@ function moora(){
                         }
                     }
                     input += '</p>';
-                    input += '<p>k'+ l++ +'4 = '+ kejujuran_normalisasi[i] +'</p>';
+                    input += '<p>x'+ l++ +'4 = '+ kejujuran_normalisasi[i] +'</p>';
                 input += '</div>';
             }
             // kolom absensi
-            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi kolom absensi</p></div>';
+            input += '<div class="col-12"><p class="font-weight-bold">Normalisasi Kolom 5 (Kolom Kriteria ‘Absensi’)</p></div>';
             var mk_k = absensi_data.length - 1;
             var k = 1;
             var l = 1;
             for(var i=0; i<kode.length; i++){
                 input += '<div class="col-12 mb-3">';
                     input += '<p class="mb-0">';
-                    input += 'k'+ k++ +'5 = '+ absensi_data[i] +' / &radic;';
+                    input += 'x'+ k++ +'5 = '+ absensi_data[i] +' / &radic;';
                     for(var j=0; j<mk_k; j++){
                         input += absensi_data[j]+'&sup2; + ';
                         if(j+2 == absensi_data.length){
@@ -248,7 +248,7 @@ function moora(){
                         }
                     }
                     input += '</p>';
-                    input += '<p>k'+ l++ +'5 = '+ absensi_normalisasi[i] +'</p>';
+                    input += '<p>x'+ l++ +'5 = '+ absensi_normalisasi[i] +'</p>';
                 input += '</div>';
             }
             input += '</div>';
@@ -257,12 +257,15 @@ function moora(){
     
         // Input data ke table 
         var inputTable = '';
+            inputTable += '<div class="col-12 p-0">';
+                inputTable += '<p class="">Tabel 3. Data Matriks Normalisasi</p>';
+            inputTable += '</div>';
             inputTable += '<table style="width:50%;" class="table-custom">';
                 inputTable += '<tr> <th style="font-size:10px;">Kode</th> <th style="font-size:10px;">Mutu Kerja</th> <th style="font-size:10px;">Tanggung Jawab</th> <th style="font-size:10px;">Inisiatif</th> <th style="font-size:10px;">Kejujuran</th> <th style="font-size:10px;">Absensi</th> </tr>';
                 var k = 1;
                 for(var i=0; i<kode.length; i++){
                     inputTable += '<tr>'; 
-                        inputTable += '<td style="font-size: 10px;">K'+ k++ +'</td>';
+                        inputTable += '<td style="font-size: 10px;">A'+ k++ +'</td>';
                         inputTable += '<td style="font-size: 10px;">'+ mutu_kerja_normalisasi[i] +'</td>';
                         inputTable += '<td style="font-size: 10px;">'+ tanggung_jawab_normalisasi[i] +'</td>';
                         inputTable += '<td style="font-size: 10px;">'+ inisiatif_normalisasi[i] +'</td>';
@@ -281,7 +284,7 @@ function moora(){
             var m = 1;
                 for(var i=0; i<kode.length; i++){
                     input2 += '<div class="col-12">'; 
-                        input2 += '<p class="">K'+ l++ +' = '+ mutu_kerja_normalisasi[i] +' + '+ tanggung_jawab_normalisasi[i] +' + '+ inisiatif_normalisasi[i] +' + '+ kejujuran_normalisasi[i] +' + '+ absensi_normalisasi[i] +' = <span id="k'+ m++ +'">'+ hasil[i] +'</span></p>';
+                        input2 += '<p class="">A'+ l++ +' = '+ mutu_kerja_normalisasi[i] +' + '+ tanggung_jawab_normalisasi[i] +' + '+ inisiatif_normalisasi[i] +' + '+ kejujuran_normalisasi[i] +' + '+ absensi_normalisasi[i] +' = <span id="k'+ m++ +'">'+ hasil[i] +'</span></p>';
                         input2 += '</div>';
                 }
             input2 += '</div>';
@@ -289,6 +292,9 @@ function moora(){
     
         // Table rangking 
         var inputRank = '';
+            inputRank += '<div class="col-12 p-0">';
+                inputRank += '<p class="">Tabel 4. Hasil Perangkingan</p>';
+            inputRank += '</div>';
             inputRank += '<table id="myTable" style="width:50%;" class="table-custom">';
             inputRank += '<tr><th style="font-size:10px;">No.</th><th style="font-size:10px;">Nama</th> <th style="font-size:10px;">Nilai</th> </tr>';
             var j = 1;

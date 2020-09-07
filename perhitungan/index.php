@@ -54,11 +54,12 @@
                         $data = mysqli_query($koneksi,"select * from pegawai");
                         $i = 1;
                         $j = 1;
+                        $k = 1;
                         while($d = mysqli_fetch_array($data)){ 
                     ?>
                       <tr>
                         <th scope="row"><?php echo $i++; ?></th>
-                        <td><?php echo $d['kode']; ?></td>
+                        <td><?php echo 'A'.$k++; ?></td>
                         <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                         <td><?php echo $d['mutu_kerja']; ?></td>
                         <td><?php echo $d['tanggung_jawab']; ?></td>
@@ -84,6 +85,42 @@
                 <button class="moora-btn btn-lg btn-success float-right">JALANKAN MOORA</button>
             </div>
         </div>
+
+        <div id="moora-karyawan" class="row mt-4 d-none">
+            <div class="col-12 p-0">
+                <p class="font-weight-bold">3.1.2.2	Data Karyawan</p>
+                <p class="">Tabel 2. Data Karyawan</p>
+            </div>
+            <table id="" style="width:50%;" class="table-custom">
+                <tr>
+                    <th style="font-size: 10px;">No.</th>
+                    <th style="font-size: 10px;">Kode</th>
+                    <th style="font-size: 10px;" colspan="3">Nama</th>
+                    <th style="font-size: 10px;">Mutu Kerja</th>
+                    <th style="font-size: 10px;">Tanggung Jawab</th>
+                    <th style="font-size: 10px;">Inisiatif</th>
+                    <th style="font-size: 10px;">Kejujuran</th>
+                    <th style="font-size: 10px;">Absensi</th>
+                </tr>
+                <?php
+                    $data = mysqli_query($koneksi,"select * from pegawai");
+                    $i = 1;
+                    $j = 1;
+                    while($d = mysqli_fetch_array($data)){ 
+                ?>
+                <tr>
+                    <td style="font-size: 10px;"><?php echo $i++; ?></td>
+                    <td style="font-size: 10px;"><?php echo 'A'.$j++; ?></td>
+                    <td style="font-size: 10px;" colspan="3"><?php echo $d['nama']; ?></td>
+                    <td style="font-size: 10px;"><?php echo $d['mutu_kerja']; ?></td>
+                    <td style="font-size: 10px;"><?php echo $d['tanggung_jawab']; ?></td>
+                    <td style="font-size: 10px;"><?php echo $d['inisiatif']; ?></td>
+                    <td style="font-size: 10px;"><?php echo $d['kejujuran']; ?></td>
+                    <td style="font-size: 10px;"><?php echo $d['absensi']; ?></td>
+                </tr>
+                <?php } ?>
+            </table>
+        </div>
         
         <div id="moora-data" class="row mt-4">
 
@@ -108,6 +145,7 @@
     $('.moora-btn').click(function(){
         if ( $('#moora-data').children().length == 0 ) {
             moora();
+            $('#moora-karyawan').removeClass('d-none');
         } else  {
             alert('Sudah di jalankan');
         }
