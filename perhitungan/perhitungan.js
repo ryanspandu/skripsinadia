@@ -254,6 +254,27 @@ function moora(){
             input += '</div>';
         
         $('#moora-data').append(input);
+
+        // Input data matriks keputusan ke table 
+        var inputMatriksKeputusan = '';
+            inputMatriksKeputusan += '<div class="col-12 p-0">';
+                inputMatriksKeputusan += '<p class="">Tabel 3. Data Matriks Keputusan</p>';
+            inputMatriksKeputusan += '</div>';
+            inputMatriksKeputusan += '<table style="width:50%;" class="table-custom">';
+                inputMatriksKeputusan += '<tr> <th style="font-size:10px;">Kode</th> <th style="font-size:10px;">Mutu Kerja</th> <th style="font-size:10px;">Tanggung Jawab</th> <th style="font-size:10px;">Inisiatif</th> <th style="font-size:10px;">Kejujuran</th> <th style="font-size:10px;">Absensi</th> </tr>';
+                var k = 1;
+                for(var i=0; i<kode.length; i++){
+                    inputMatriksKeputusan += '<tr>'; 
+                        inputMatriksKeputusan += '<td style="font-size: 10px;">A'+ k++ +'</td>';
+                        inputMatriksKeputusan += '<td style="font-size: 10px;">'+ mutu_kerja_data[i] +'</td>';
+                        inputMatriksKeputusan += '<td style="font-size: 10px;">'+ tanggung_jawab_data[i] +'</td>';
+                        inputMatriksKeputusan += '<td style="font-size: 10px;">'+ inisiatif_data[i] +'</td>';
+                        inputMatriksKeputusan += '<td style="font-size: 10px;">'+ kejujuran_data[i] +'</td>';
+                        inputMatriksKeputusan += '<td style="font-size: 10px;">'+ absensi_data[i] +'</td>';
+                    inputMatriksKeputusan += '</tr>'; 
+                }
+                
+        $('#moora-matriks').append(inputMatriksKeputusan);
     
         // Input data ke table 
         var inputTable = '';
