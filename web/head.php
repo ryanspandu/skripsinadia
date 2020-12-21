@@ -6,3 +6,6 @@
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/custom.js"></script>
+
+<link href="assets/img/logo.png" rel="favicon"/>
+<link href="assets/img/logo.png" rel="icon"/>
