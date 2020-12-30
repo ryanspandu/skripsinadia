@@ -35,14 +35,14 @@ foreach($karyawan as $d){
 
 // inisialisasi klaster awal
 $layak['mutu_kerja'] = 75;
-$layak['tanggung_jawab'] = 60;
-$layak['inisiatif'] = 55;
-$layak['kejujuran'] = 70;
-$layak['absensi'] = 60;
+$layak['tanggung_jawab'] = 72;
+$layak['inisiatif'] = 75;
+$layak['kejujuran'] = 80;
+$layak['absensi'] = 80;
 
-$tidak_layak['mutu_kerja'] = 50;
-$tidak_layak['tanggung_jawab'] = 50;
-$tidak_layak['inisiatif'] = 35;
-$tidak_layak['kejujuran'] = 50;
-$tidak_layak['absensi'] = 45;
+$tidak_layak['mutu_kerja'] = 70;
+$tidak_layak['tanggung_jawab'] = 70;
+$tidak_layak['inisiatif'] = 68;
+$tidak_layak['kejujuran'] = 70;
+$tidak_layak['absensi'] = 70;
 ?>
