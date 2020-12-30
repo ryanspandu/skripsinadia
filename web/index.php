@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container mb-5">
     <div class="row">
         <div class="col-3 left position-fixed" style="z-index:1;">
             <div class="row mt-4">
@@ -41,9 +41,9 @@
                     </div>
                 </div>
             </div>
-            <h3 class="mt-3" style="color:rgb(85, 103, 117);">Data Karyawan</h3>
+            <h3 class="mt-3 px-4" style="color:rgb(85, 103, 117);">Data Karyawan</h3>
             <div class="row mt-4">
-                <div class="col-12">
+                <div class="col-12 px-5">
                     <table class="table table-dark">
                         <thead class="">
                           <tr>
@@ -61,61 +61,90 @@
                         </thead>
                     </table>
                 </div>
-                <div class="col-12" style="max-height: 438px; overflow-y: scroll;">
-                    <table class="table table-light">
-                        <thead class="d-none">
-                          <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col">Kode</th>
-                            <th scope="col" colspan="3">Nama</th>
-                            <th scope="col">Mutu Kerja</th>
-                            <th scope="col">Tanggung Jawab</th>
-                            <th scope="col">Inisiatif</th>
-                            <th scope="col">Kejujuran</th>
-                            <th scope="col">Absensi</th>
-                            <th scope="col">Edit</th>
-                            <th scope="col">Hapus</th>
-                          </tr>
-                        </thead>
-                        <tbody class="table-data">
-                        <?php
-                            include 'conn.php';
-                            $data = mysqli_query($conn,"select * from karyawan_kontrak");
-                            $i = 1;
-                            $j = 1;
-                            $k = 1;
-                            while($d = mysqli_fetch_array($data)){ 
-                        ?>
-                          <tr>
-                            <th scope="row"><?php echo $i++; ?></th>
-                            <td><?php echo 'A'.$k++; ?></td>
-                            <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
-                            <td><?php echo $d['mutu_kerja']; ?></td>
-                            <td><?php echo $d['tanggung_jawab']; ?></td>
-                            <td><?php echo $d['inisiatif']; ?></td>
-                            <td><?php echo $d['kejujuran']; ?></td>
-                            <td><?php echo $d['absensi']; ?></td>
-                            <td>
-                                <a href="edit.php?kode=<?php echo $d['kode']; ?>">
-                                    <i class="material-icons">edit</i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="../perhitungan/hapus.php?kode=<?php echo $d['kode']; ?>">
-                                    <i class="material-icons text-danger">delete</i>
-                                </a>
-                            </td>
-                          </tr>
-                          <?php } ?>
-                        </tbody>
-                      </table>
+                <div class="col-12 px-5">
+                    <div style="max-height: 438px; overflow-y: scroll;">
+                        <table class="table table-light">
+                            <thead class="d-none">
+                              <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Kode</th>
+                                <th scope="col" colspan="3">Nama</th>
+                                <th scope="col">Mutu Kerja</th>
+                                <th scope="col">Tanggung Jawab</th>
+                                <th scope="col">Inisiatif</th>
+                                <th scope="col">Kejujuran</th>
+                                <th scope="col">Absensi</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Hapus</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-data">
+                            <?php
+                                include 'conn.php';
+                                $data = mysqli_query($conn,"select * from karyawan_kontrak");
+                                $i = 1;
+                                $j = 1;
+                                $k = 1;
+                                while($d = mysqli_fetch_array($data)){ 
+                            ?>
+                              <tr>
+                                <th scope="row"><?php echo $i++; ?></th>
+                                <td><?php echo 'A'.$k++; ?></td>
+                                <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
+                                <td><?php echo $d['mutu_kerja']; ?></td>
+                                <td><?php echo $d['tanggung_jawab']; ?></td>
+                                <td><?php echo $d['inisiatif']; ?></td>
+                                <td><?php echo $d['kejujuran']; ?></td>
+                                <td><?php echo $d['absensi']; ?></td>
+                                <td>
+                                    <a href="edit.php?kode=<?php echo $d['kode']; ?>">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="../perhitungan/hapus.php?kode=<?php echo $d['kode']; ?>">
+                                        <i class="material-icons text-danger">delete</i>
+                                    </a>
+                                </td>
+                              </tr>
+                              <?php } ?>
+                            </tbody>
+                          </table>
+                    </div>
                 </div>
-                <div class="col-12 mt-3">
-                    <button class="moora-btn btn-lg btn-success float-right">JALANKAN MOORA</button>
+                <div class="col-12 mt-3 px-5">
+                    <button class="proses-btn btn-lg btn-success float-right">PROSES</button>
+                </div>
+                <div class="col-12 mt-5 px-5">
+                    <div class="main">
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+var click=0;
+// production
+// $('.proses-btn').click(function(){
+//     if(click == 0){
+//         $.get("perhitungan/index.php", function(data){
+//         $(".main").html(data);
+//         });
+//         click = 1;
+//     }else{
+//         alert('Perintah sudah dijalankan');
+//     }
+// });
+
+// development
+$('.proses-btn').click(function(){
+    $.get("perhitungan/index.php", function(data){
+    $(".main").html(data);
+    });
+});
+</script>
 </body>
 </html>
