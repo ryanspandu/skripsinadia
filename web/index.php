@@ -16,11 +16,11 @@
     <div class="row">
         <div class="col-3 left position-fixed" style="z-index:1;">
             <div class="row mt-4">
-                <div class="col-12 d-flex flex-row align-items-center">
-                    <img src="assets/img/logo.png" width="95px"/>
+                <div class="col-12 d-flex flex-row ">
+                    <img src="assets/img/logo.png" width="85px" height="100px" class="mt-2"/>
                     <div class="ml-4">
-                        <h1 class="text-white">DINAS PUPR</h1>
-                        <p class="text-white">Kabupaten Bogor</p>
+                        <h1 class="text-white mt-0 font-weight-bold">DINAS PUPR</h1>
+                        <p class="text-light">Kabupaten Bogor</p>
                     </div>
                 </div>
                 <div class="col-12 border-bottom py-3 mt-5">

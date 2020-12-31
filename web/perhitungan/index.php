@@ -30,7 +30,7 @@ foreach($k_means['hasil'] as $k){
 }
 // dd($hasil_k_means);
 ?>
-<h3 class="mb-3" style="color:rgb(85, 103, 117);">Data Karyawan Layak K-Means</h3><table class="table table-dark">
+<h3 class="mb-3" style="color:rgb(85, 103, 117);">Data Karyawan Layak K-Means</h3><table class="table table-primary">
     <thead class="">
         <tr>
         <th scope="col">No.</th>
@@ -41,8 +41,6 @@ foreach($k_means['hasil'] as $k){
         <th scope="col">Inisiatif</th>
         <th scope="col">Kejujuran</th>
         <th scope="col">Absensi</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Hapus</th>
         </tr>
     </thead>
 </table>
@@ -59,8 +57,6 @@ foreach($k_means['hasil'] as $k){
             <th scope="col">Inisiatif</th>
             <th scope="col">Kejujuran</th>
             <th scope="col">Absensi</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Hapus</th>
             </tr>
         </thead>
         <tbody class="table-data">
@@ -77,16 +73,6 @@ foreach($k_means['hasil'] as $k){
             <td><?php echo $d['inisiatif']; ?></td>
             <td><?php echo $d['kejujuran']; ?></td>
             <td><?php echo $d['absensi']; ?></td>
-            <td>
-                <a href="edit.php?kode=<?php echo $d['kode']; ?>">
-                    <i class="material-icons">edit</i>
-                </a>
-            </td>
-            <td>
-                <a href="../perhitungan/hapus.php?kode=<?php echo $d['kode']; ?>">
-                    <i class="material-icons text-danger">delete</i>
-                </a>
-            </td>
             </tr>
             <?php } ?>
         </tbody>
@@ -94,7 +80,7 @@ foreach($k_means['hasil'] as $k){
 </div>
 
 
-<h3 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Data Karyawan Tidak Layak K-Means</h3><table class="table table-dark">
+<h3 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Data Karyawan Tidak Layak K-Means</h3><table class="table table-primary">
     <thead class="">
         <tr>
         <th scope="col">No.</th>
@@ -105,8 +91,6 @@ foreach($k_means['hasil'] as $k){
         <th scope="col">Inisiatif</th>
         <th scope="col">Kejujuran</th>
         <th scope="col">Absensi</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Hapus</th>
         </tr>
     </thead>
 </table>
@@ -123,8 +107,6 @@ foreach($k_means['hasil'] as $k){
             <th scope="col">Inisiatif</th>
             <th scope="col">Kejujuran</th>
             <th scope="col">Absensi</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Hapus</th>
             </tr>
         </thead>
         <tbody class="table-data">
@@ -141,16 +123,6 @@ foreach($k_means['hasil'] as $k){
             <td><?php echo $d['inisiatif']; ?></td>
             <td><?php echo $d['kejujuran']; ?></td>
             <td><?php echo $d['absensi']; ?></td>
-            <td>
-                <a href="edit.php?kode=<?php echo $d['kode']; ?>">
-                    <i class="material-icons">edit</i>
-                </a>
-            </td>
-            <td>
-                <a href="../perhitungan/hapus.php?kode=<?php echo $d['kode']; ?>">
-                    <i class="material-icons text-danger">delete</i>
-                </a>
-            </td>
             </tr>
             <?php } ?>
         </tbody>
