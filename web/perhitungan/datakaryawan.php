@@ -17,22 +17,22 @@ while($d = mysqli_fetch_array($data)){
 }
 
 // Data perkolom "setiap kriteri dari atas kebawah" berdasarkan kolom
-$i = 1;
-$kolom_nama = [];
-$kolom_mutu_kerja = [];
-$kolom_tanggung_jawab = [];
-$kolom_inisiatif = [];
-$kolom_kejujuran = [];
-$kolom_absensi = [];
-foreach($karyawan as $d){ 
-    $kolom_nama[$i] = $d['nama'];
-    $kolom_mutu_kerja[$i] = $d['mutu_kerja'];
-    $kolom_tanggung_jawab[$i] = $d['tanggung_jawab'];
-    $kolom_inisiatif[$i] = $d['inisiatif'];
-    $kolom_kejujuran[$i] = $d['kejujuran'];
-    $kolom_absensi[$i] = $d['absensi'];
-    $i++;
-}
+// $i = 1;
+// $kolom_nama = [];
+// $kolom_mutu_kerja = [];
+// $kolom_tanggung_jawab = [];
+// $kolom_inisiatif = [];
+// $kolom_kejujuran = [];
+// $kolom_absensi = [];
+// foreach($karyawan as $d){ 
+//     $kolom_nama[$i] = $d['nama'];
+//     $kolom_mutu_kerja[$i] = $d['mutu_kerja'];
+//     $kolom_tanggung_jawab[$i] = $d['tanggung_jawab'];
+//     $kolom_inisiatif[$i] = $d['inisiatif'];
+//     $kolom_kejujuran[$i] = $d['kejujuran'];
+//     $kolom_absensi[$i] = $d['absensi'];
+//     $i++;
+// }
 
 // inisialisasi klaster awal
 $layak['mutu_kerja'] = 75;

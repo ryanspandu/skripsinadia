@@ -1,33 +1,8 @@
 <?php 
 include 'k-means.php';
-// include 'moora.php';
+include 'moora.php';
 
 // dd($k_means['hasil']);
-$hasil_k_means = [];
-$i=1;
-$j=1;
-foreach($k_means['hasil'] as $k){
-    if($k['klaster']=='layak'){
-        $hasil_k_means['layak'][$i]['kode'] = $k['kode'];
-        $hasil_k_means['layak'][$i]['nama'] = $k['nama'];
-        $hasil_k_means['layak'][$i]['mutu_kerja'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['mutu_kerja'];
-        $hasil_k_means['layak'][$i]['tanggung_jawab'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['tanggung_jawab'];
-        $hasil_k_means['layak'][$i]['inisiatif'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['inisiatif'];
-        $hasil_k_means['layak'][$i]['kejujuran'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['kejujuran'];
-        $hasil_k_means['layak'][$i]['absensi'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['absensi'];
-        $i++;
-    }
-    if($k['klaster']=='tidak layak'){
-        $hasil_k_means['tidak_layak'][$j]['kode'] = $k['kode'];
-        $hasil_k_means['tidak_layak'][$j]['nama'] = $k['nama'];
-        $hasil_k_means['tidak_layak'][$j]['mutu_kerja'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['mutu_kerja'];
-        $hasil_k_means['tidak_layak'][$j]['tanggung_jawab'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['tanggung_jawab'];
-        $hasil_k_means['tidak_layak'][$j]['inisiatif'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['inisiatif'];
-        $hasil_k_means['tidak_layak'][$j]['kejujuran'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['kejujuran'];
-        $hasil_k_means['tidak_layak'][$j]['absensi'] = $karyawan[intval(trim(str_replace('A','',$k['kode'])))]['absensi'];
-        $j++;
-    }
-}
 // dd($hasil_k_means);
 ?>
 <h3 class="mb-3" style="color:rgb(85, 103, 117);">Data Karyawan Layak K-Means</h3><table class="table table-primary">
