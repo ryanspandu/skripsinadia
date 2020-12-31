@@ -47,15 +47,117 @@ function jarak_klaster($layak, $tidak_layak, $karyawan){
     return $jarak_klaster;
 }
 
-dd(jarak_klaster($layak, $tidak_layak, $karyawan));
-$k_means = [];
-$i=1;
-// do {
-//     $hitung = jarak_klaster($layak, $tidak_layak, $karyawan);
-//     $k_means[$i]['nama'] = $hitung[$i]['nama'];
-//     $k_means[$i]['layak'] = $hitung[$i]['layak'];
-//     $k_means[$i]['tidak_layak'] = $hitung[$i]['tidak_layak'];
 
-//     $i++;
-//   } while ($k_means[$i-1]['layak'] == $k_means[$i]['layak'] && $k_means[$i-1]['tidak_layak'] == $k_means[$i]['tidak_layak']);
+$k_means = [];
+
+for ($i = 1; $i <= 20; $i++) {
+    $k_means['iterasi'][$i] = $i;
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['hasil'] as $h){
+        $k_means['hasil'][$t]['nama'] = $h['nama'];
+        $k_means['hasil'][$t]['layak'] = $h['layak'];
+        $k_means['hasil'][$t]['tidak_layak'] = $h['tidak_layak'];
+        $k_means['hasil'][$t]['klaster'] = $h['klaster'];
+        $k_means['data']['layak'][$i] = $h['layak'];
+        $k_means['data']['tidak_layak'][$i] = $h['tidak_layak'];
+        $t++;
+    }
+    // data layak mutu kerja
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_layak']['mutu_kerja'] as $h){
+        $k_means['data_layak']['mutu_kerja'][$t] = $h;
+        $t++;
+    }
+    // data layak tanggung jawab
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_layak']['tanggung_jawab'] as $h){
+        $k_means['data_layak']['tanggung_jawab'][$t] = $h;
+        $t++;
+    }
+    // data layak inisiatif
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_layak']['inisiatif'] as $h){
+        $k_means['data_layak']['inisiatif'][$t] = $h;
+        $t++;
+    }
+    // data layak kejujuran
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_layak']['kejujuran'] as $h){
+        $k_means['data_layak']['kejujuran'][$t] = $h;
+        $t++;
+    }
+    // data layak absensi
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_layak']['absensi'] as $h){
+        $k_means['data_layak']['absensi'][$t] = $h;
+        $t++;
+    }
+    // data tidak layak mutu kerja
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_tidak_layak']['mutu_kerja'] as $h){
+        $k_means['data_tidak_layak']['mutu_kerja'][$t] = $h;
+        $t++;
+    }
+    // data tidak layak tanggung jawab
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_tidak_layak']['tanggung_jawab'] as $h){
+        $k_means['data_tidak_layak']['tanggung_jawab'][$t] = $h;
+        $t++;
+    }
+    // data tidak layak inisiatif
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_tidak_layak']['inisiatif'] as $h){
+        $k_means['data_tidak_layak']['inisiatif'][$t] = $h;
+        $t++;
+    }
+    // data tidak layak kejujuran
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_tidak_layak']['kejujuran'] as $h){
+        $k_means['data_tidak_layak']['kejujuran'][$t] = $h;
+        $t++;
+    }
+    // data tidak layak absensi
+    $t=1;
+    foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['data_tidak_layak']['absensi'] as $h){
+        $k_means['data_tidak_layak']['absensi'][$t] = $h;
+        $t++;
+    }
+    
+    $layak['mutu_kerja'] = array_sum($k_means['data_layak']['mutu_kerja'])/count($k_means['data_layak']['mutu_kerja']);
+    $layak['tanggung_jawab'] = array_sum($k_means['data_layak']['tanggung_jawab'])/count($k_means['data_layak']['tanggung_jawab']);
+    $layak['inisiatif'] = array_sum($k_means['data_layak']['inisiatif'])/count($k_means['data_layak']['inisiatif']);
+    $layak['kejujuran'] = array_sum($k_means['data_layak']['kejujuran'])/count($k_means['data_layak']['kejujuran']);
+    $layak['absensi'] = array_sum($k_means['data_layak']['absensi'])/count($k_means['data_layak']['absensi']);
+
+    $tidak_layak['mutu_kerja'] = array_sum($k_means['data_tidak_layak']['mutu_kerja'])/count($k_means['data_tidak_layak']['mutu_kerja']);
+    $tidak_layak['tanggung_jawab'] = array_sum($k_means['data_tidak_layak']['tanggung_jawab'])/count($k_means['data_tidak_layak']['tanggung_jawab']);
+    $tidak_layak['inisiatif'] = array_sum($k_means['data_tidak_layak']['inisiatif'])/count($k_means['data_tidak_layak']['inisiatif']);
+    $tidak_layak['kejujuran'] = array_sum($k_means['data_tidak_layak']['kejujuran'])/count($k_means['data_tidak_layak']['kejujuran']);
+    $tidak_layak['absensi'] = array_sum($k_means['data_tidak_layak']['absensi'])/count($k_means['data_tidak_layak']['absensi']);
+
+    if($i>2){
+        if($i>count($karyawan)){
+            $layak_sebelumnya = $k_means['data']['layak'][count($karyawan)-1];
+            $layak_sekarang = $k_means['data']['layak'][count($karyawan)];
+            $tidak_layak_sebelumnya = $k_means['data']['tidak_layak'][count($karyawan)-1];
+            $tidak_layak_sekarang = $k_means['data']['tidak_layak'][count($karyawan)];
+        }
+        $layak_sebelumnya = $k_means['data']['layak'][$i-1];
+        $layak_sekarang = $k_means['data']['layak'][$i];
+        $tidak_layak_sebelumnya = $k_means['data']['tidak_layak'][$i-1];
+        $tidak_layak_sekarang = $k_means['data']['tidak_layak'][$i];
+    }else{
+        $layak_sebelumnya = false;
+        $layak_sekarang = true;
+        $tidak_layak_sebelumnya = false;
+        $tidak_layak_sekarang = true;
+    }
+    if ($layak_sebelumnya == $layak_sekarang && $tidak_layak_sebelumnya == $tidak_layak_sekarang) {
+      break;
+    }else{
+        continue;
+    }
+}
+
+dd($k_means);
 ?>
