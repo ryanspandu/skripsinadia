@@ -21,8 +21,24 @@ function normalisasi($kolom){
     return $normalisasi;
 }
 
-function optimasi(){
+function optimasi($data){
+    $i=1;
+    $optimasi = [];
+    foreach($data['layak'] as $d){
+        $optimasi['layak'][$i]['nama'] = $d['nama'];
+        $optimasi['layak'][$i]['kode'] = $d['kode'];
+        $optimasi['layak'][$i]['optimasi'] = $d['mutu_kerja']+$d['tanggung_jawab']+$d['inisiatif']+$d['kejujuran']+$d['absensi'];
+        $i++;
+    }
+    $i=1;
+    foreach($data['tidak_layak'] as $d){
+        $optimasi['tidak_layak'][$i]['nama'] = $d['nama'];
+        $optimasi['tidak_layak'][$i]['kode'] = $d['kode'];
+        $optimasi['tidak_layak'][$i]['optimasi'] = $d['mutu_kerja']+$d['tanggung_jawab']+$d['inisiatif']+$d['kejujuran']+$d['absensi'];
+        $i++;
+    }
 
+    return $optimasi;
 }
 // dd($hasil_k_means);
 
@@ -92,5 +108,16 @@ foreach($hasil_k_means['tidak_layak'] as $k){
     $karyawan_moora['tidak_layak'][$i]['absensi'] = $normalisasi_absensi['tidak_layak']['data'][$i];
     $i++;
 }
-dd($karyawan_moora);
+$optimasi = optimasi($karyawan_moora);
+
+
+usort($optimasi['layak'], function($a, $b) {
+    return $a['optimasi'] <= $b['optimasi'];
+});
+
+usort($optimasi['tidak_layak'], function($a, $b) {
+    return $a['optimasi'] <= $b['optimasi'];
+});
+
+dd($optimasi);
 ?>
