@@ -41,8 +41,8 @@
                     </div>
                 </div>
             </div>
-            <h3 class="mt-3 px-4" style="color:rgb(85, 103, 117);">Data Karyawan</h3>
             <div class="row mt-4">
+                <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">Data Karyawan</h3>
                 <div class="col-12 px-5">
                     <table class="table table-dark">
                         <thead class="">

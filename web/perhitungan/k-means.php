@@ -9,6 +9,7 @@ function jarak_klaster($layak, $tidak_layak, $karyawan){
 
     for($i=1; $i<=count($karyawan); $i++){
         // array cluster layak
+        $jarak_klaster['hasil'][$i]['kode'] = $karyawan[$i]['kode'];
         $jarak_klaster['hasil'][$i]['nama'] = $karyawan[$i]['nama'];
         $jarak_klaster['hasil'][$i]['layak'] = sqrt(
             pow($layak['mutu_kerja']-$karyawan[$i]['mutu_kerja'],2)+
@@ -18,7 +19,7 @@ function jarak_klaster($layak, $tidak_layak, $karyawan){
             pow($layak['absensi']-$karyawan[$i]['absensi'],2)
         );
         // array cluster tidak layak
-        $jarak_klaster['hasil'][$i]['nama'] = $karyawan[$i]['nama'];
+        // $jarak_klaster['hasil'][$i]['nama'] = $karyawan[$i]['nama'];
         $jarak_klaster['hasil'][$i]['tidak_layak'] = sqrt(
             pow($tidak_layak['mutu_kerja']-$karyawan[$i]['mutu_kerja'],2)+
             pow($tidak_layak['tanggung_jawab']-$karyawan[$i]['tanggung_jawab'],2)+
@@ -54,11 +55,15 @@ for ($i = 1; $i <= 20; $i++) {
     $k_means['iterasi'][$i] = $i;
     $t=1;
     foreach(jarak_klaster($layak, $tidak_layak, $karyawan)['hasil'] as $h){
+        $k_means['hasil'][$t]['kode'] = $h['kode'];
         $k_means['hasil'][$t]['nama'] = $h['nama'];
         $k_means['hasil'][$t]['layak'] = $h['layak'];
         $k_means['hasil'][$t]['tidak_layak'] = $h['tidak_layak'];
         $k_means['hasil'][$t]['klaster'] = $h['klaster'];
         $k_means['data']['layak'][$i] = $h['layak'];
+        // if($k_means['hasil'][$t]['klaster'] == 'layak'){
+        // }else{
+        // }
         $k_means['data']['tidak_layak'][$i] = $h['tidak_layak'];
         $t++;
     }
@@ -159,5 +164,5 @@ for ($i = 1; $i <= 20; $i++) {
     }
 }
 
-dd($k_means);
+// dd($k_means);
 ?>

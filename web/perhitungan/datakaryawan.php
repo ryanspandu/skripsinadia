@@ -6,6 +6,7 @@ $data = mysqli_query($conn,"select * from karyawan_kontrak");
 $i = 1;
 $karyawan = [];
 while($d = mysqli_fetch_array($data)){ 
+    $karyawan[$i]['kode'] = 'A'.$i;
     $karyawan[$i]['nama'] = $d['nama'];
     $karyawan[$i]['mutu_kerja'] = floatval($d['mutu_kerja']);
     $karyawan[$i]['tanggung_jawab'] = floatval($d['tanggung_jawab']);
