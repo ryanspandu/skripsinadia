@@ -108,16 +108,16 @@ foreach($hasil_k_means['tidak_layak'] as $k){
     $karyawan_moora['tidak_layak'][$i]['absensi'] = $normalisasi_absensi['tidak_layak']['data'][$i];
     $i++;
 }
-$optimasi = optimasi($karyawan_moora);
+$hasil_moora = optimasi($karyawan_moora);
 
 
-usort($optimasi['layak'], function($a, $b) {
+usort($hasil_moora['layak'], function($a, $b) {
     return $a['optimasi'] <= $b['optimasi'];
 });
 
-usort($optimasi['tidak_layak'], function($a, $b) {
+usort($hasil_moora['tidak_layak'], function($a, $b) {
     return $a['optimasi'] <= $b['optimasi'];
 });
 
-dd($optimasi);
+// dd($hasil_moora);
 ?>
