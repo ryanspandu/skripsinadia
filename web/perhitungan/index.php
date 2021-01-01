@@ -5,7 +5,7 @@ include 'moora.php';
 // dd($k_means['hasil']);
 // dd($hasil_k_means);
 ?>
-<h4 class="mb-3" style="color:rgb(85, 103, 117);">Klastering Layak K-Means</h4><table class="table table-primary">
+<h4 class="mb-3" style="color:rgb(85, 103, 117);">Klastering Layak K-Means</h4><table class="table table-warning">
     <thead class="">
         <tr>
         <th scope="col">No.</th>
@@ -55,7 +55,7 @@ include 'moora.php';
 </div>
 
 
-<h4 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Klastering Tidak Layak K-Means</h4><table class="table table-primary">
+<h4 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Klastering Tidak Layak K-Means</h4><table class="table table-warning">
     <thead class="">
         <tr>
         <th scope="col">No.</th>
@@ -104,7 +104,8 @@ include 'moora.php';
         </table>
 </div>
 
-<h4 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Klasifikasi & Perangkingan Layak, Tidak Layak Moora</h4><table class="table table-primary">
+<h4 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Klasifikasi & Perangkingan Layak, Tidak Layak Moora</h4>
+<table class="table table-primary">
     <thead class="">
         <tr>
         <th scope="col">No.</th>
