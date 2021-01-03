@@ -1,10 +1,7 @@
 <?php 
 include 'k-means.php';
 include 'moora.php';
-
- //dd($hasil_moora);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,7 +164,6 @@ include 'moora.php';
       </tbody>
     </table>
 
-
     <p style="margin-top: 30px;">Optimasi & Perangkingan MOORA</p>            
     <table class="table table-custom table-bordered" style="max-width: 700px;">
       <thead>
@@ -201,6 +197,5 @@ include 'moora.php';
       </tbody>
     </table>
   </div>
-
 </body>
 </html>
