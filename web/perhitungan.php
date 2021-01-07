@@ -15,6 +15,9 @@
         <li>
             <a href="perhitungan/manual/moora_normalisasi_tidak_layak.php">Moora Normalisasi Tidak Layak</a>
         </li>
+        <li>
+            <a href="perhitungan/manual/moora_optimasi.php">Moora Optimasi</a>
+        </li>
     </ul>
     
 </body>
