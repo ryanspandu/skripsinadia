@@ -4,6 +4,9 @@ include '../../conn.php';
 include '../datakaryawan.php';
 include '../k-means.php';
 
+echo 'Lampiran 5. Normalisasi Matriks Moora';
+echo '<br>';
+echo '<br>';
 function normalisasimoora($kolom){
     $normalisasi=[];
     $i=1;

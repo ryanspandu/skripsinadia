@@ -3,6 +3,10 @@ error_reporting(0);
 include '../../conn.php';
 include '../datakaryawan.php';
 include '../dd.php';
+
+echo 'Lampiran 1. Iterasi K-Means';
+echo '<br>';
+echo '<br>';
 // Pencarian iterasi 1
 for($i=1; $i<=100; $i++){
     $hasil_layak = sqrt(

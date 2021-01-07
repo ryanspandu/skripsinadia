@@ -7,6 +7,9 @@ include '../moora.php';
 
 // dd($karyawan_moora);
 
+echo 'Lampiran 7. Perhitungan Optimasi Moora';
+echo '<br>';
+echo '<br>';
 // Optimasi layak
 echo 'Optimasi Moora Layak';
 echo '<br>';
