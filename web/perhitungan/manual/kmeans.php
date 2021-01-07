@@ -217,7 +217,7 @@ for($i=1; $i<=5; $i++){
 
 // perhitungan 2 - dan seterusnya 
 $it=2;
-for($i=1; $i<=19; $i++){
+for($i=1; $i<=10; $i++){
     echo '<br>';
     echo 'Iterasi '.$it.' Layak';
     echo '<br>';

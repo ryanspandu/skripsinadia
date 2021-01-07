@@ -59,6 +59,7 @@ for($i=1; $i<=count($hasil_k_means['tidak_layak']); $i++){
         }
     }
     echo '<br>';
+    echo '<br>';
 }
 
 echo '<br>';
@@ -79,6 +80,7 @@ for($i=1; $i<=count($hasil_k_means['tidak_layak']); $i++){
             echo $tidak_layak_tanggung_jawab['data'][$j].'&sup2;'.' + ';
         }
     }
+    echo '<br>';
     echo '<br>';
 }
 
@@ -101,6 +103,7 @@ for($i=1; $i<=count($hasil_k_means['tidak_layak']); $i++){
         }
     }
     echo '<br>';
+    echo '<br>';
 }
 
 echo '<br>';
@@ -122,6 +125,7 @@ for($i=1; $i<=count($hasil_k_means['tidak_layak']); $i++){
         }
     }
     echo '<br>';
+    echo '<br>';
 }
 
 echo '<br>';
@@ -142,6 +146,7 @@ for($i=1; $i<=count($hasil_k_means['tidak_layak']); $i++){
             echo $tidak_layak_absensi['data'][$j].'&sup2;'.' + ';
         }
     }
+    echo '<br>';
     echo '<br>';
 }
 
