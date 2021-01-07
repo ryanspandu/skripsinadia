@@ -1,7 +1,8 @@
 <?php 
-include 'datakaryawan.php';
-include 'dd.php';
-
+error_reporting(0);
+include '../../conn.php';
+include '../datakaryawan.php';
+include '../dd.php';
 // Pencarian iterasi 1
 for($i=1; $i<=100; $i++){
     $hasil_layak = sqrt(
