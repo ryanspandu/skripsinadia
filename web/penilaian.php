@@ -254,7 +254,7 @@ if(! isset($_SESSION['nip'])){
             </div>
 
             <div class="row mt-4">
-            <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">ACC KADIS</h3>
+            <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">Acc Kadis</h3>
                 <div class="col-12 px-5">
                     <div style="max-height: 438px; overflow-y: scroll;">
                         <table class="table table-primary">
