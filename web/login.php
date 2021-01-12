@@ -28,7 +28,7 @@
             <h4 class="card-title mt-2">Log in</h4>
         </header>
         <article class="card-body">
-        <form>
+        <form action="proses/login.php" method="POST">
             <!-- <div class="form-row">
                 <div class="col form-group">
                     <label>First name </label>   
@@ -41,11 +41,11 @@
             </div>  -->
             <div class="form-group">
                 <label>Nip</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" name="nip" class="form-control" placeholder="">
             </div>  
             <div class="form-group">
                 <label>Password</label>
-                <input class="form-control" type="password">
+                <input class="form-control" name="password" type="password">
             </div>   
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block"> Login  </button>

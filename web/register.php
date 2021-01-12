@@ -28,11 +28,11 @@
             <h4 class="card-title mt-2">Register</h4>
         </header>
         <article class="card-body">
-        <form>
+        <form action="proses/register.php" method="POST">
             <!-- <div class="form-row">
                 <div class="col form-group">
                     <label>First name </label>   
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" name="" class="form-control" placeholder="">
                 </div> 
                 <div class="col form-group">
                     <label>Last name</label>
@@ -41,21 +41,21 @@
             </div>  -->
             <div class="form-group">
                 <label>Nip</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" name="nip" class="form-control" placeholder="">
             </div> 
             <div class="form-group">
                 <label>Nama</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" name="nama" class="form-control" placeholder="">
                 <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
             </div> 
             <div class="form-group">
                 <label>Jabatan</label>
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" name="jabatan" class="form-control" placeholder="">
             </div> 
             <!-- <div class="form-row">
                 <div class="form-group col-md-6">
                 <label>City</label>
-                <input type="text" class="form-control">
+                <input type="text" name="" class="form-control">
                 </div> 
                 <div class="form-group col-md-6">
                 <label>Country</label>
@@ -71,7 +71,7 @@
             </div>  -->
             <div class="form-group">
                 <label>Password</label>
-                <input class="form-control" type="password">
+                <input class="form-control" name="password" type="password">
             </div>   
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block"> Register  </button>

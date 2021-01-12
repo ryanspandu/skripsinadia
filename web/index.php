@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+if(! isset($_SESSION['nip'])){
+    header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,9 +43,10 @@
             <div class="row" style="background: rgb(241, 243, 250); height: 56px;">
                 <div class="w-100 d-flex flex-row justify-content-end align-items-center px-3">
                     <div class="d-flex flex-row align-items-center">
-                        <p class="mb-0 mr-3">User</p>
+                        <p class="mb-0 mr-3"><?php if(isset($_SESSION['nama'])) { echo $_SESSION['nama']; } ?></p>
                         <img src="assets/img/avatar.jpg" width="40px" class="rounded-circle"/>
                     </div>
+                <a href="logout.php" class="mb-0 ml-3"><img src="assets/img/exit.svg"/> Logout</a>
                 </div>
             </div>
             <div class="row mt-4">
