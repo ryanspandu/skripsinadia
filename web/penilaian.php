@@ -65,9 +65,10 @@ if(! isset($_SESSION['nip'])){
                                 }
                                 if($jabatan == 'Kasi'){
                                     $disabled = '';
+                                    echo '<p class="text-success">(Anda Memiliki Akses)</p>';
                                 }else{
                                     $disabled = 'disabled';
-                                    echo '<p class="text-danger">(Anda Bukan Kasi)</p>';
+                                    echo '<p class="text-danger">(Anda Tidak Memiliki Akses)</p>';
                                 }
 
                                 $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak WHERE status='penilaian_kasi'");
@@ -135,9 +136,10 @@ if(! isset($_SESSION['nip'])){
                                 }
                                 if($jabatan == 'Kabid'){
                                     $disabled = '';
+                                    echo '<p class="text-success">(Anda Memiliki Akses)</p>';
                                 }else{
                                     $disabled = 'disabled';
-                                    echo '<p class="text-danger">(Anda Bukan Kabid)</p>';
+                                    echo '<p class="text-danger">(Anda Tidak Memiliki Akses)</p>';
                                 }
 
                                 $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak WHERE status='penilaian_kabid'");
@@ -206,9 +208,10 @@ if(! isset($_SESSION['nip'])){
                                 }
                                 if($jabatan == 'Kasubag'){
                                     $disabled = '';
+                                    echo '<p class="text-success">(Anda Memiliki Akses)</p>';
                                 }else{
                                     $disabled = 'disabled';
-                                    echo '<p class="text-danger">(Anda Bukan Kasubag)</p>';
+                                    echo '<p class="text-danger">(Anda Tidak Memiliki Akses)</p>';
                                 }
 
                                 $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak WHERE status='penilaian_kasubag'");
@@ -276,9 +279,10 @@ if(! isset($_SESSION['nip'])){
                                 }
                                 if($jabatan == 'Kadis'){
                                     $disabled = '';
+                                    echo '<p class="text-success">(Anda Memiliki Akses)</p>';
                                 }else{
                                     $disabled = 'disabled';
-                                    echo '<p class="text-danger">(Anda Bukan Kadis)</p>';
+                                    echo '<p class="text-danger">(Anda Tidak Memiliki Akses)</p>';
                                 }
 
                                 $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak WHERE status='acc_kadis'");
