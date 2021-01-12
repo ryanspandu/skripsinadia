@@ -1,0 +1,157 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jan 12, 2021 at 05:04 PM
+-- Server version: 5.7.32-0ubuntu0.16.04.1
+-- PHP Version: 7.0.33-0ubuntu0.16.04.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `admin_aplikasi_moora`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `karyawan_kontrak`
+--
+
+CREATE TABLE `karyawan_kontrak` (
+  `id` varchar(10) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `mutu_kerja` int(3) NOT NULL,
+  `tanggung_jawab` int(3) NOT NULL,
+  `inisiatif` int(3) NOT NULL,
+  `kejujuran` int(3) NOT NULL,
+  `absensi` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `karyawan_kontrak`
+--
+
+INSERT INTO `karyawan_kontrak` (`id`, `nama`, `mutu_kerja`, `tanggung_jawab`, `inisiatif`, `kejujuran`, `absensi`) VALUES
+('A21', 'NUR IRFAN ASYARI, S.T.', 75, 73, 70, 82, 87),
+('A22', 'HARKAT AZI KURNIA, S.H', 78, 72, 76, 81, 65),
+('A23', 'BUDI KURNIA HERMAWAN, A. Md.', 72, 76, 70, 82, 77),
+('A24', 'SAIFUL MAULANA, S.E', 72, 71, 83, 80, 72),
+('A25', 'ANDRIS ADI NEGARA, S.T.', 71, 88, 62, 78, 80),
+('A27', 'AZIZAH DEWI PRAMONOPUTRI, SP.', 80, 77, 76, 80, 80),
+('A28', 'HELLY DERMAWAN FAMILIYA, S.H., MA', 70, 75, 80, 80, 78),
+('A29', 'REGI SETIAWAN', 70, 72, 76, 77, 78),
+('A30', 'MUHAMMAD GILANG YOES SAPUTRA, S.PWK.', 76, 77, 65, 70, 68),
+('K1', 'ANDRI YULIZAR LUBIS, ST', 85, 80, 65, 85, 80),
+('K10', 'ALDI FADHLU ROHMAN', 76, 80, 86, 90, 89),
+('K100', 'YUDHA MUKHTADIN, A.Md', 78, 76, 78, 80, 79),
+('K101', 'AZIS MUIN', 78, 79, 73, 81, 80),
+('K102', 'FAJAR NURHIDAYAT, ST', 78, 79, 80, 81, 76),
+('K11', 'FAHMI WIJAYA, ST', 78, 80, 83, 89, 90),
+('K12', 'MUHAMMAD ZIKRU TAFAKARA, ST', 80, 87, 72, 87, 90),
+('K13', 'DICKY SETIADI HADI EFFENDI, ST', 78, 75, 87, 88, 67),
+('K14', 'DIKY PURWANTO , ST', 75, 77, 78, 70, 89),
+('K15', 'ENDAH RUSTIASARI, SS', 87, 88, 80, 89, 90),
+('K16', 'FUNGKI CHINTIA DEWI SAPUTRI, S.Kom', 88, 75, 68, 87, 78),
+('K17', 'TENO TUNDOYEKTI, S. Pt', 89, 70, 76, 72, 73),
+('K18', 'AGUS FAIZUN MAULANA, SH', 73, 78, 65, 72, 70),
+('K19', 'ADE SYAFRUDIN, A.Md', 80, 85, 83, 88, 73),
+('K2', 'LIZA TANZILA, S.H.', 90, 85, 85, 90, 89),
+('K20', 'CHAIDIR NUR SALEH', 90, 90, 92, 89, 90),
+('K3', 'RUDI ROSAD MUSTAKIM, S.E.', 85, 86, 90, 94, 90),
+('K30', 'HAFIIZHAN RAMDHANI, A. Md.', 77, 78, 73, 80, 72),
+('K31', 'ERNI NURAENI, S.A.P.', 71, 72, 73, 78, 77),
+('K32', 'PALUPI NUSANDARI, S.T.', 72, 73, 74, 75, 77),
+('K33', 'ARIESANDI SATRIYO, S.E.', 80, 78, 79, 72, 65),
+('K34', 'APRIYANTI ELIS MALIDA, A.Md', 70, 68, 72, 77, 60),
+('K35', 'SRI INDRIASIH', 75, 76, 77, 80, 72),
+('K36', 'RIVAN PAHLAWAN, A.Md', 74, 68, 75, 77, 89),
+('K37', 'ISMAWAN WAHID', 78, 77, 79, 65, 88),
+('K38', 'MUHAMMAD RAFI ALWANI, S.H', 80, 82, 83, 90, 88),
+('K39', 'LILIS ETY HARTATI', 80, 81, 82, 84, 83),
+('K4', 'WARDANA, S.Pd.I', 85, 87, 80, 84, 83),
+('K40', 'YULIAWAN NUGROHO, SH', 72, 73, 74, 76, 77),
+('K41', 'NOVIAN SAEPUL, SE', 71, 70, 73, 75, 77),
+('K42', 'TUBAGUS MUHAMMAD AFIF, S.Sos', 80, 78, 79, 81, 83),
+('K43', 'MARISSA PUSPITA ANGGRAINI, S.Psi', 73, 74, 76, 80, 82),
+('K44', 'AJENG INDAH ISTIQOMAH', 72, 73, 75, 77, 82),
+('K45', 'GITA ANGGRAENI HERMAWAN,S.I.Kom', 78, 79, 80, 70, 73),
+('K46', 'SELVIA HANDAYANI, S.Pd', 73, 72, 71, 75, 80),
+('K47', 'MAMAT DARMAWAN', 73, 74, 76, 80, 71),
+('K48', 'IMAN KADARISMAN, SE', 75, 78, 77, 76, 78),
+('K49', 'IIP ARIP ISMAIL', 75, 76, 78, 73, 77),
+('K5', 'MARSHA NIKITA VELISA PUTRI, S.H.', 80, 75, 74, 85, 85),
+('K51', 'HERDIKA', 76, 77, 79, 81, 87),
+('K52', 'RENI RUSMIYATI, A.Md', 78, 76, 77, 87, 89),
+('K53', 'ANDINI KURNIASARI, SE', 79, 78, 77, 81, 76),
+('K54', 'SAWITRA WIJAYA, SE', 80, 83, 76, 80, 79),
+('K55', 'SITI ROHANI DWICAHYA', 79, 73, 77, 82, 83),
+('K56', 'RIZKI SOLEHUDIN, A.Md', 76, 77, 72, 78, 79),
+('K57', 'NUR RATNA SARI, SE', 73, 72, 75, 80, 79),
+('K58', 'PRAMESYWARI NOVITA PRADINI,SE', 75, 76, 80, 81, 82),
+('K59', 'RIAN NURIANSYAH', 70, 72, 74, 78, 69),
+('K6', 'M. HASAN SAZILI, S.E.', 80, 78, 70, 80, 65),
+('K60', 'ASEP ARDIANSYAH', 78, 76, 79, 80, 82),
+('K61', 'AHMAD DANNY HUDAYA, S.P', 75, 77, 78, 82, 87),
+('K62', 'BEKTI ANGGONO, SE', 79, 76, 82, 88, 79),
+('K63', 'SUGIH MUKTI PRIBADI IRAWAN', 81, 79, 80, 73, 76),
+('K64', 'ANDI GINANJAR, A.Md', 76, 77, 73, 78, 71),
+('K65', 'RAFLI AWALUDIN SIDIQ', 72, 73, 68, 74, 88),
+('K66', 'R PRATIWI ANUGRAH,SH', 75, 74, 78, 79, 73),
+('K67', 'FITRA AWALI HIDAYAT', 75, 78, 77, 74, 80),
+('K68', 'LAODE HASRI', 72, 75, 74, 78, 76),
+('K69', 'ARIS YULIADI, S.Sos', 78, 79, 75, 74, 81),
+('K7', 'RENDI MULYADI, S.Pd.I', 75, 75, 80, 82, 79),
+('K70', 'OCTA RIATAMA, S.Sos', 74, 78, 77, 79, 73),
+('K71', 'MUHAMMAD ILYAS', 70, 72, 71, 69, 60),
+('K72', 'ASEP JAMULDIN', 72, 74, 76, 77, 74),
+('K73', 'RIANDY SURYA IRAWAN, ST', 76, 75, 73, 72, 71),
+('K74', 'FRISKA WIDYASTUTI, SH', 74, 75, 73, 80, 76),
+('K75', 'ABDUL GANI', 69, 70, 76, 73, 72),
+('K76', 'VIVI SOFIAH, A.Md', 72, 74, 76, 78, 80),
+('K77', 'NURDIANSYAH, ST', 75, 77, 72, 74, 81),
+('K78', 'MUHAMMAD REZA NUGRAHA, ST', 80, 82, 81, 80, 80),
+('K8', 'ELI HALIMAH, S.E.', 80, 81, 82, 75, 80),
+('K80', 'MUHAMAD KAMALLUDIN', 72, 75, 81, 83, 78),
+('K81', 'SHELDYAN IMANDA', 78, 79, 75, 81, 82),
+('K82', 'SULISTIA, ST', 72, 71, 73, 82, 80),
+('K83', 'NURUL IBAD TAOFIKI, ST', 79, 76, 77, 75, 81),
+('K84', 'IFAN RIVANTO', 76, 78, 79, 82, 81),
+('K85', 'MUHAMAD RUSMANA, ST', 76, 78, 79, 80, 81),
+('K86', 'LIKA DORA, SE', 72, 74, 78, 81, 82),
+('K87', 'ZAENAL MUTTAQIN, S.Ds', 78, 76, 78, 80, 80),
+('K88', 'NURAFIFAH', 78, 81, 81, 82, 76),
+('K89', 'ANNA SAFITRI, ST', 79, 76, 77, 73, 80),
+('K9', 'DEDI SUPRIYADI', 85, 89, 75, 80, 87),
+('K90', ' AHMAD SUHENDRA EFENDI, SE', 78, 72, 81, 82, 80),
+('K91', 'MUHAMAD RIZAL', 70, 72, 74, 76, 81),
+('K92', 'DIVA MEDAL MUNGGARAN A.Ma. PKB', 70, 71, 71, 73, 70),
+('K93', 'DEVI WINDIANSYAH, S.Sos', 76, 78, 75, 81, 82),
+('K94', 'BANGLUS FALDANO SAID , ST', 78, 79, 75, 81, 80),
+('K95', 'MUHAMMAD HERLI DZIKRULLOH, SH', 76, 81, 80, 83, 78),
+('K96', 'MUHAMAD FIRDAUS', 73, 74, 76, 81, 80),
+('K97', 'TATU RIZKIA, S.P', 81, 80, 78, 79, 76),
+('K98', 'LADYS ALLOYS PINEM, S.Kom', 82, 80, 81, 87, 88),
+('K99', 'SUKRI, A.Md', 81, 79, 76, 82, 78);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `karyawan_kontrak`
+--
+ALTER TABLE `karyawan_kontrak`
+  ADD PRIMARY KEY (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
