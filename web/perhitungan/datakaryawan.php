@@ -1,7 +1,7 @@
 <?php
 include '../conn.php';
 
-$data = mysqli_query($conn,"select * from karyawan_kontrak");
+$data = mysqli_query($conn,"select * from karyawan_kontrak where status='acc'");
 // Data karyawan perbaris
 $i = 1;
 $karyawan = [];

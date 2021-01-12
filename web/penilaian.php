@@ -42,48 +42,9 @@ if(! isset($_SESSION['nip'])){
             <div class="row mt-4">
             <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">Penilaian Kasi</h3>
                 <div class="col-12 px-5">
-                    <table class="table table-warning">
-                        <thead class="">
-                          <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col" colspan="3">Nama</th>
-                            <th scope="col">Mutu Kerja</th>
-                            <th scope="col">Tanggung Jawab</th>
-                            <th scope="col">Inisiatif</th>
-                            <th scope="col">Kejujuran</th>
-                            <th scope="col">Absensi</th>
-                            <th scope="col">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody class="" style="opacity: 0; height: 10px !important; overflow:hidden;">
-                        <tr>
-                            <th scope="row"><?php echo 1 ?></th>
-                            <td colspan="3"><?php echo 'test'; ?></td>
-                            <td>
-                                <input type="number" min="1" max="100" name="mk" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="tj" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="in" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="kj" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="ab" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <button class="proses-btn btn btn-success float-right">SIMPAN</button>
-                            </td>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-12 px-5">
                     <div style="max-height: 438px; overflow-y: scroll;">
-                        <table class="table table-light">
-                            <thead class="d-none"> 
+                        <table class="table table-warning">
+                            <thead class=""> 
                               <tr>
                                 <th scope="col">No.</th>
                                 <th scope="col" colspan="3">Nama</th>
@@ -98,6 +59,17 @@ if(! isset($_SESSION['nip'])){
                             <tbody class="table-data">
                             <?php
                                 include 'conn.php';
+
+                                if(isset($_SESSION['jabatan'])){
+                                    $jabatan = $_SESSION['jabatan'];
+                                }
+                                if($jabatan == 'Kasi'){
+                                    $disabled = '';
+                                }else{
+                                    $disabled = 'disabled';
+                                    echo '<p class="text-danger">(Anda Bukan Kasi)</p>';
+                                }
+
                                 $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak WHERE status='penilaian_kasi'");
                                 $i = 1;
                                 $j = 1;
@@ -111,22 +83,22 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="mk" placeholder="<?php echo $d['mutu_kerja']; ?>"/>
+                                    <input type="number" min="1" max="100" name="mk" placeholder="0 - 100" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="tj" placeholder="<?php echo $d['tanggung_jawab']; ?>"/>
+                                    <input type="number" min="1" max="100" name="tj" placeholder="0 - 100" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="in" placeholder="<?php echo $d['inisiatif']; ?>"/>
+                                    <input type="number" min="1" max="100" name="in" placeholder="0 - 100" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="kj" placeholder="<?php echo $d['kejujuran']; ?>"/>
+                                    <input type="number" min="1" max="100" name="kj" placeholder="0 - 100" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="ab" placeholder="<?php echo $d['absensi']; ?>"/>
+                                    <input type="number" min="1" max="100" name="ab" placeholder="0 - 100" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <button type="submit" class="proses-btn btn btn-success float-right">SIMPAN</button>
+                                    <button type="submit" class="proses-btn btn btn-success float-right" <?php echo $disabled; ?>>SIMPAN</button>
                                 </td>
                                 </form>
                               </tr>
@@ -140,48 +112,9 @@ if(! isset($_SESSION['nip'])){
             <div class="row mt-4">
             <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">Penilaian Kabid</h3>
                 <div class="col-12 px-5">
-                    <table class="table table-warning">
-                        <thead class="">
-                          <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col" colspan="3">Nama</th>
-                            <th scope="col">Mutu Kerja</th>
-                            <th scope="col">Tanggung Jawab</th>
-                            <th scope="col">Inisiatif</th>
-                            <th scope="col">Kejujuran</th>
-                            <th scope="col">Absensi</th>
-                            <th scope="col">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody class="" style="opacity: 0; height: 10px !important; overflow:hidden;">
-                        <tr>
-                            <th scope="row"><?php echo 1 ?></th>
-                            <td colspan="3"><?php echo 'test'; ?></td>
-                            <td>
-                                <input type="number" min="1" max="100" name="mk" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="tj" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="in" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="kj" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="ab" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <button class="proses-btn btn btn-success float-right">SIMPAN</button>
-                            </td>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-12 px-5">
                     <div style="max-height: 438px; overflow-y: scroll;">
-                        <table class="table table-light">
-                            <thead class="d-none"> 
+                        <table class="table table-warning">
+                            <thead class=""> 
                               <tr>
                                 <th scope="col">No.</th>
                                 <th scope="col" colspan="3">Nama</th>
@@ -196,6 +129,17 @@ if(! isset($_SESSION['nip'])){
                             <tbody class="table-data">
                             <?php
                                 include 'conn.php';
+
+                                if(isset($_SESSION['jabatan'])){
+                                    $jabatan = $_SESSION['jabatan'];
+                                }
+                                if($jabatan == 'Kabid'){
+                                    $disabled = '';
+                                }else{
+                                    $disabled = 'disabled';
+                                    echo '<p class="text-danger">(Anda Bukan Kabid)</p>';
+                                }
+
                                 $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak WHERE status='penilaian_kabid'");
                                 $i = 1;
                                 $j = 1;
@@ -209,22 +153,22 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="mk" placeholder="<?php echo $d['mutu_kerja']; ?>"/>
+                                    <input type="number" min="1" max="100" name="mk" value="<?php echo $d['mutu_kerja']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="tj" placeholder="<?php echo $d['tanggung_jawab']; ?>"/>
+                                    <input type="number" min="1" max="100" name="tj" value="<?php echo $d['tanggung_jawab']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="in" placeholder="<?php echo $d['inisiatif']; ?>"/>
+                                    <input type="number" min="1" max="100" name="in" value="<?php echo $d['inisiatif']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="kj" placeholder="<?php echo $d['kejujuran']; ?>"/>
+                                    <input type="number" min="1" max="100" name="kj" value="<?php echo $d['kejujuran']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="ab" placeholder="<?php echo $d['absensi']; ?>"/>
+                                    <input type="number" min="1" max="100" name="ab" value="<?php echo $d['absensi']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <button type="submit" class="proses-btn btn btn-success float-right">SIMPAN</button>
+                                    <button type="submit" class="proses-btn btn btn-success float-right" <?php echo $disabled; ?>>SIMPAN</button>
                                 </td>
                                 </form>
                               </tr>
@@ -239,48 +183,9 @@ if(! isset($_SESSION['nip'])){
             <div class="row mt-4">
             <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">Penilaian Kasubag</h3>
                 <div class="col-12 px-5">
-                    <table class="table table-warning">
-                        <thead class="">
-                          <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col" colspan="3">Nama</th>
-                            <th scope="col">Mutu Kerja</th>
-                            <th scope="col">Tanggung Jawab</th>
-                            <th scope="col">Inisiatif</th>
-                            <th scope="col">Kejujuran</th>
-                            <th scope="col">Absensi</th>
-                            <th scope="col">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody class="" style="opacity: 0; height: 10px !important; overflow:hidden;">
-                        <tr>
-                            <th scope="row"><?php echo 1 ?></th>
-                            <td colspan="3"><?php echo 'test'; ?></td>
-                            <td>
-                                <input type="number" min="1" max="100" name="mk" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="tj" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="in" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="kj" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="ab" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <button class="proses-btn btn btn-success float-right">SIMPAN</button>
-                            </td>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-12 px-5">
                     <div style="max-height: 438px; overflow-y: scroll;">
-                        <table class="table table-light">
-                            <thead class="d-none"> 
+                        <table class="table table-warning">
+                            <thead class=""> 
                               <tr>
                                 <th scope="col">No.</th>
                                 <th scope="col" colspan="3">Nama</th>
@@ -295,6 +200,17 @@ if(! isset($_SESSION['nip'])){
                             <tbody class="table-data">
                             <?php
                                 include 'conn.php';
+
+                                if(isset($_SESSION['jabatan'])){
+                                    $jabatan = $_SESSION['jabatan'];
+                                }
+                                if($jabatan == 'Kasubag'){
+                                    $disabled = '';
+                                }else{
+                                    $disabled = 'disabled';
+                                    echo '<p class="text-danger">(Anda Bukan Kasubag)</p>';
+                                }
+
                                 $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak WHERE status='penilaian_kasubag'");
                                 $i = 1;
                                 $j = 1;
@@ -308,22 +224,22 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="mk" placeholder="<?php echo $d['mutu_kerja']; ?>"/>
+                                    <input type="number" min="1" max="100" name="mk" value="<?php echo $d['mutu_kerja']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="tj" placeholder="<?php echo $d['tanggung_jawab']; ?>"/>
+                                    <input type="number" min="1" max="100" name="tj" value="<?php echo $d['tanggung_jawab']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="in" placeholder="<?php echo $d['inisiatif']; ?>"/>
+                                    <input type="number" min="1" max="100" name="in" value="<?php echo $d['inisiatif']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="kj" placeholder="<?php echo $d['kejujuran']; ?>"/>
+                                    <input type="number" min="1" max="100" name="kj" value="<?php echo $d['kejujuran']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="ab" placeholder="<?php echo $d['absensi']; ?>"/>
+                                    <input type="number" min="1" max="100" name="ab" value="<?php echo $d['absensi']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <button type="submit" class="proses-btn btn btn-success float-right">SIMPAN</button>
+                                    <button type="submit" class="proses-btn btn btn-success float-right" <?php echo $disabled; ?>>SIMPAN</button>
                                 </td>
                                 </form>
                               </tr>
@@ -337,48 +253,9 @@ if(! isset($_SESSION['nip'])){
             <div class="row mt-4">
             <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">ACC KADIS</h3>
                 <div class="col-12 px-5">
-                    <table class="table table-primary">
-                        <thead class="">
-                          <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col" colspan="3">Nama</th>
-                            <th scope="col">Mutu Kerja</th>
-                            <th scope="col">Tanggung Jawab</th>
-                            <th scope="col">Inisiatif</th>
-                            <th scope="col">Kejujuran</th>
-                            <th scope="col">Absensi</th>
-                            <th scope="col">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody class="" style="opacity: 0; height: 10px !important; overflow:hidden;">
-                        <tr>
-                            <th scope="row"><?php echo 1 ?></th>
-                            <td colspan="3"><?php echo 'test'; ?></td>
-                            <td>
-                                <input type="number" min="1" max="100" name="mk" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="tj" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="in" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="kj" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <input type="number" min="1" max="100" name="ab" placeholder="<?php echo 'test'; ?>"/>
-                            </td>
-                            <td>
-                                <button class="proses-btn btn btn-success float-right">SIMPAN</button>
-                            </td>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-12 px-5">
                     <div style="max-height: 438px; overflow-y: scroll;">
-                        <table class="table table-light">
-                            <thead class="d-none"> 
+                        <table class="table table-primary">
+                            <thead class=""> 
                               <tr>
                                 <th scope="col">No.</th>
                                 <th scope="col" colspan="3">Nama</th>
@@ -393,6 +270,17 @@ if(! isset($_SESSION['nip'])){
                             <tbody class="table-data">
                             <?php
                                 include 'conn.php';
+
+                                if(isset($_SESSION['jabatan'])){
+                                    $jabatan = $_SESSION['jabatan'];
+                                }
+                                if($jabatan == 'Kadis'){
+                                    $disabled = '';
+                                }else{
+                                    $disabled = 'disabled';
+                                    echo '<p class="text-danger">(Anda Bukan Kadis)</p>';
+                                }
+
                                 $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak WHERE status='acc_kadis'");
                                 $i = 1;
                                 $j = 1;
@@ -406,22 +294,22 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="mk" placeholder="<?php echo $d['mutu_kerja']; ?>"/>
+                                    <?php echo $d['mutu_kerja']; ?>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="tj" placeholder="<?php echo $d['tanggung_jawab']; ?>"/>
+                                    <?php echo $d['tanggung_jawab']; ?>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="in" placeholder="<?php echo $d['inisiatif']; ?>"/>
+                                    <?php echo $d['inisiatif']; ?>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="kj" placeholder="<?php echo $d['kejujuran']; ?>"/>
+                                    <?php echo $d['kejujuran']; ?>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="ab" placeholder="<?php echo $d['absensi']; ?>"/>
+                                    <?php echo $d['absensi']; ?>
                                 </td>
                                 <td>
-                                    <button type="submit" class="proses-btn btn btn-success float-right">SIMPAN</button>
+                                    <button type="submit" class="proses-btn btn btn-primary float-right" <?php echo $disabled; ?>>ACC</button>
                                 </td>
                                 </form>
                               </tr>
