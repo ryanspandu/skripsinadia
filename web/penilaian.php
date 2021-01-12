@@ -63,7 +63,7 @@ if(! isset($_SESSION['nip'])){
                                 if(isset($_SESSION['jabatan'])){
                                     $jabatan = $_SESSION['jabatan'];
                                 }
-                                if($jabatan == 'Kasi'){
+                                if($jabatan == 'Kasi' || $jabatan == 'Admin'){
                                     $disabled = '';
                                     echo '<p class="text-success">(Anda Memiliki Akses)</p>';
                                 }else{
@@ -134,7 +134,7 @@ if(! isset($_SESSION['nip'])){
                                 if(isset($_SESSION['jabatan'])){
                                     $jabatan = $_SESSION['jabatan'];
                                 }
-                                if($jabatan == 'Kabid'){
+                                if($jabatan == 'Kabid' || $jabatan == 'Admin'){
                                     $disabled = '';
                                     echo '<p class="text-success">(Anda Memiliki Akses)</p>';
                                 }else{
@@ -206,7 +206,7 @@ if(! isset($_SESSION['nip'])){
                                 if(isset($_SESSION['jabatan'])){
                                     $jabatan = $_SESSION['jabatan'];
                                 }
-                                if($jabatan == 'Kasubag'){
+                                if($jabatan == 'Kasubag' || $jabatan == 'Admin'){
                                     $disabled = '';
                                     echo '<p class="text-success">(Anda Memiliki Akses)</p>';
                                 }else{
@@ -277,7 +277,7 @@ if(! isset($_SESSION['nip'])){
                                 if(isset($_SESSION['jabatan'])){
                                     $jabatan = $_SESSION['jabatan'];
                                 }
-                                if($jabatan == 'Kadis'){
+                                if($jabatan == 'Kadis' || $jabatan == 'Admin'){
                                     $disabled = '';
                                     echo '<p class="text-success">(Anda Memiliki Akses)</p>';
                                 }else{
