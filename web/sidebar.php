@@ -13,6 +13,9 @@
         <div class="col-12 border-bottom py-3 mt-3">
             <a href="tambah.php" class="text-white" style="opacity: <?php echo $opacity[2]; ?>;font-size: 24px;">Tambah Karyawan</a>
         </div>
+        <div class="col-12 border-bottom py-3 mt-3">
+            <a href="penilaian.php" class="text-white" style="opacity: <?php echo $opacity[3]; ?>;font-size: 24px;">Penilaian</a>
+        </div>
     </div>
 </div>
 <div class="col-3 left"></div>

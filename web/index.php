@@ -25,6 +25,7 @@ if(! isset($_SESSION['nip'])){
         
             $opacity[1] = '1';
             $opacity[2] = '0.5';
+            $opacity[3] = '0.5';
             include 'sidebar.php'; 
             
         ?>
@@ -94,12 +95,12 @@ if(! isset($_SESSION['nip'])){
                                 <td><?php echo $d['kejujuran']; ?></td>
                                 <td><?php echo $d['absensi']; ?></td>
                                 <td>
-                                    <a href="edit.php?kode=<?php echo $d['kode']; ?>">
+                                    <a href="edit.php?id=<?php echo $d['id']; ?>">
                                         <i class="material-icons">edit</i>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="../perhitungan/hapus.php?kode=<?php echo $d['kode']; ?>">
+                                    <a href="../perhitungan/hapus.php?id=<?php echo $d['id']; ?>">
                                         <i class="material-icons text-danger">delete</i>
                                     </a>
                                 </td>

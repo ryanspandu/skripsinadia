@@ -25,6 +25,7 @@ if(! isset($_SESSION['nip'])){
 
             $opacity[1] = '0.5';
             $opacity[2] = '1';
+            $opacity[3] = '0.5';
             include 'sidebar.php'; 
             
         ?>
@@ -46,7 +47,7 @@ if(! isset($_SESSION['nip'])){
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Karyawan">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="">Mutu Kerja</label>
                         <input type="number" min="0" max="100" class="form-control" name="mk" placeholder="0 - 100" >
                     </div>
@@ -65,7 +66,7 @@ if(! isset($_SESSION['nip'])){
                     <div class="form-group">
                         <label for="">Absensi</label>
                         <input type="number" min="0" max="100" class="form-control" name="ab" placeholder="0 - 100" >
-                    </div>
+                    </div> -->
                     <button type="submit" class="proses-btn btn-lg btn-success float-right">SIMPAN</button>
                 </form>
                 </div>
