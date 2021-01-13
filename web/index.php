@@ -98,7 +98,7 @@ if(! isset($_SESSION['nip'])){
                                 <td><?php echo $d['absensi']; ?></td>
                                 <?php if($_SESSION['jabatan'] == 'Kadis' || $_SESSION['jabatan'] == 'Admin') { ?>
                                 <td>
-                                    <a href="proses/tinjau.php?id=<?php echo $d['id']; ?>">
+                                    <a href="proses/tinjau.php?id=<?php echo $d['id']; ?>" class="tinjau">
                                         <i class="material-icons">Tinjau</i>
                                     </a>
                                 </td>
@@ -143,9 +143,13 @@ var click=0;
 
 // development
 $('.proses-btn').click(function(){
+    alert('Sedang menjalankan metode, mohon tunggu sampai hasil keluar');
     $.get("perhitungan/index.php", function(data){
     $(".main").html(data);
     });
+});
+$('.tinjau').click(function(){
+    alert('Data akan ditinjau kembali dan melakukan penilaian dari awal lagi');
 });
 </script>
 </body>

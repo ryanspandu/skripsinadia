@@ -67,7 +67,7 @@ if(! isset($_SESSION['nip'])){
                         <label for="">Absensi</label>
                         <input type="number" min="0" max="100" class="form-control" name="ab" placeholder="0 - 100" >
                     </div> -->
-                    <button type="submit" class="proses-btn btn-lg btn-success float-right">SIMPAN</button>
+                    <button type="submit" class="simpan-kry-btn btn-lg btn-success float-right">SIMPAN</button>
                 </form>
                 </div>
                 
@@ -77,7 +77,9 @@ if(! isset($_SESSION['nip'])){
 </div>
 
 <script>
-
+$('.simpan-kry-btn').click(function(){
+    alert('Data karyawan berhasil ditambahkan');
+});
 </script>
 </body>
 </html>

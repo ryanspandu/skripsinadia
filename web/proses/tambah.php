@@ -15,7 +15,7 @@ var_dump($_POST);
 $query = "INSERT into `karyawan_kontrak` (id, nama, status) VALUES ('', '{$nama}', '{$status}')";
 mysqli_query($conn,$query);
 // echo mysqli_error($conn);
-header('Location: ../index.php');
+header('Location: penilaian.php');
 // if($result){
 //     echo 'Registration success';
 //     header('Location: ../index.php');
