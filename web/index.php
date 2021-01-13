@@ -53,8 +53,9 @@ if(! isset($_SESSION['nip'])){
                             <th scope="col">Inisiatif</th>
                             <th scope="col">Kejujuran</th>
                             <th scope="col">Absensi</th>
-                            <th scope="col">Edit</th>
-                            <th scope="col">Hapus</th>
+                            <?php if($_SESSION['jabatan'] == 'Kadis' || $_SESSION['jabatan'] == 'Admin') { ?>
+                            <th scope="col">Aksi</th>
+                            <?php } ?>
                           </tr>
                         </thead>
                     </table>
@@ -72,8 +73,9 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="col">Inisiatif</th>
                                 <th scope="col">Kejujuran</th>
                                 <th scope="col">Absensi</th>
-                                <th scope="col">Edit</th>
-                                <th scope="col">Hapus</th>
+                                <?php if($_SESSION['jabatan'] == 'Kadis' || $_SESSION['jabatan'] == 'Admin') { ?>
+                                <th scope="col">Aksi</th>
+                                <?php } ?>
                               </tr>
                             </thead>
                             <tbody class="table-data">
@@ -94,16 +96,18 @@ if(! isset($_SESSION['nip'])){
                                 <td><?php echo $d['inisiatif']; ?></td>
                                 <td><?php echo $d['kejujuran']; ?></td>
                                 <td><?php echo $d['absensi']; ?></td>
+                                <?php if($_SESSION['jabatan'] == 'Kadis' || $_SESSION['jabatan'] == 'Admin') { ?>
                                 <td>
-                                    <a href="edit.php?id=<?php echo $d['id']; ?>">
-                                        <i class="material-icons">edit</i>
+                                    <a href="proses/tinjau.php?id=<?php echo $d['id']; ?>">
+                                        <i class="material-icons">Tinjau</i>
                                     </a>
                                 </td>
-                                <td>
+                                <?php } ?>
+                                <!-- <td>
                                     <a href="../perhitungan/hapus.php?id=<?php echo $d['id']; ?>">
                                         <i class="material-icons text-danger">delete</i>
                                     </a>
-                                </td>
+                                </td> -->
                               </tr>
                               <?php } ?>
                             </tbody>
