@@ -105,6 +105,10 @@ include 'moora.php';
 </div>
 
 <h4 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Klasifikasi & Perangkingan Layak, Tidak Layak Moora</h4>
+<p class="text-danger mb-1" style="font-style: italic;">*info</p>
+<p class="text-danger mb-0" style="font-style: italic;">Grade A : Bonus insentif 50% dari gaji</p>
+<p class="text-danger mb-0" style="font-style: italic;">Grade B : Bonus insentif 25% dari gaji</p>
+<p class="text-danger" style="font-style: italic;">Grade C : Bonus insentif 10% dari gaji</p>
 <table class="table table-primary">
     <thead class="">
         <tr>
@@ -139,6 +143,11 @@ include 'moora.php';
         </thead>
         <tbody class="table-data">
         <?php
+        // echo count($hasil_moora['layak'])/3;
+        $gradeA = count($hasil_moora['layak'])/3;
+        $gradeB = $gradeA*2;
+        // $gradeC = $gradeA*3;
+        // echo $gradeA.$gradeB;
         $i=1;
             foreach($hasil_moora['layak'] as $d){ 
         ?>
@@ -147,7 +156,7 @@ include 'moora.php';
             <td><?php echo $d['kode'] ?></td>
             <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
             <td><?php echo $d['optimasi']; ?></td>
-            <td class="text-success font-weight-bold"><?php echo 'Layak'; ?></td>
+            <td class="text-success font-weight-bold"><?php echo 'Layak'; ?><?php if($i <= $gradeA){ echo ' <span class="text-dark">(Grade A)</span>'; }elseif($i >= $gradeA && $i <= $gradeB){ echo ' <span class="text-dark">(Grade B)</span>'; }else{ echo ' <span class="text-dark">(Grade C)</span>'; } ?></td>
             </tr>
             <?php } ?>
 
