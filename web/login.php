@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Aplikasi Penentuan Insentif Karyawan - Nadia Regina</title>
-    <?php include 'head.php'; ?>
+    <?php include 'head.php'; session_start(); ?>
     <style>
         body{
             background: rgb(33,118,207);
@@ -19,6 +19,22 @@
         </div>
         <hr style="border: rgba(207, 220, 253, 0.116) solid 0.25px;">
 
+        <?php 
+        if(isset($_SESSION['login_msg'])){
+            $msg = $_SESSION['login_msg'];
+        }else{
+            $msg = NULL;
+        }
+            if($msg == 'Gagal Login'){ ?>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="alert alert-danger" role="alert">
+                        Nip atau Password Salah!
+                    </div>
+                </div>
+            </div>
+            <?php }
+        ?>
 
         <div class="row justify-content-center">
         <div class="col-md-6">

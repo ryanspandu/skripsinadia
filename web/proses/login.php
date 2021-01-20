@@ -18,6 +18,7 @@ $_SESSION['username'] = $username;
     while($row = mysqli_fetch_assoc($result)) {
         $_SESSION['nama'] = $row["nama"];
         $_SESSION['jabatan'] = $row["jabatan"];
+        $_SESSION['login_msg'] = 'Sukses';
      }
 }else{
     header("Location: ../login.php");
