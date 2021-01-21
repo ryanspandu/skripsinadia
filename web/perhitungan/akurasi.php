@@ -131,16 +131,16 @@ $hasil_akurasi['akurasi'] .= '%';
 <body class="pb-5">
 <div class="" style="margin-bottom: 30px; margin-left: 10px; margin-top: 30px;">
 <p>Lampiran 9. Tabel Akurasi</p> 
-<p style="">Akurasi Hitung Sistem & HRD</p> 
+<p style="">Akurasi Hitung Sistem & keputusan kadis</p> 
 TP ( True Positif ) = jumlah data
-yang layak menurut hrd dan layak menurut
+yang layak menurut keputusan kadis dan layak menurut
 sistem <br>
 TN ( True Negatif)= jumlah data yang
-tidak layak menurut hrd dan tidak layak menurut sistem <br>
+tidak layak menurut keputusan kadis dan tidak layak menurut sistem <br>
 FP ( False Positif )= jumlah data
-layak menurut hrd namun tidak menurut
+layak menurut keputusan kadis namun tidak menurut
 layak sistem <br>
-FN ( False Negatif)=jumlah data tidak layak menurut hrd 
+FN ( False Negatif)=jumlah data tidak layak menurut keputusan kadis 
 namun layak menurut sistem<br>   
 <p style="margin-bottom:0; margin-top: 10px;">TP = <?php echo $hasil_akurasi['tp']; ?></p>    
 <p style="margin-bottom:0;">TN = <?php echo $hasil_akurasi['tn']; ?></p>   
@@ -155,7 +155,7 @@ namun layak menurut sistem<br>
           <th class="nilai">Kode</th>
           <th class="nilai">Nama</th>
           <th class="nilai">Sistem</th>
-          <th class="nilai">HRD</th>
+          <th class="nilai">Keputusan Kadis</th>
         </tr>
       </thead>
       <tbody>
