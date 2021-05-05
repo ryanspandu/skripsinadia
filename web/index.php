@@ -26,6 +26,7 @@ if(! isset($_SESSION['nip'])){
             $opacity[1] = '1';
             $opacity[2] = '0.5';
             $opacity[3] = '0.5';
+            $opacity[4] = '0.5';
             include 'sidebar.php'; 
             
         ?>

@@ -26,6 +26,7 @@ if(! isset($_SESSION['nip'])){
             $opacity[1] = '0.5';
             $opacity[2] = '0.5';
             $opacity[3] = '1';
+            $opacity[4] = '0.5';
             include 'sidebar.php'; 
             
         ?>
@@ -48,11 +49,8 @@ if(! isset($_SESSION['nip'])){
                               <tr>
                                 <th scope="col">No.</th>
                                 <th scope="col" colspan="3">Nama</th>
-                                <th scope="col">Mutu Kerja</th>
-                                <th scope="col">Tanggung Jawab</th>
                                 <th scope="col">Inisiatif</th>
                                 <th scope="col">Kejujuran</th>
-                                <th scope="col">Absensi</th>
                                 <th scope="col">Aksi</th>
                               </tr>
                             </thead>
@@ -84,19 +82,10 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="mk" placeholder="0 - 100" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
-                                    <input type="number" min="1" max="100" name="tj" placeholder="0 - 100" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
                                     <input type="number" min="1" max="100" name="in" placeholder="0 - 100" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
                                     <input type="number" min="1" max="100" name="kj" placeholder="0 - 100" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
-                                    <input type="number" min="1" max="100" name="ab" placeholder="0 - 100" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
                                     <button type="submit" class="proses-btn btn btn-success float-right" <?php echo $disabled; ?>>SIMPAN</button>
@@ -121,9 +110,6 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="col" colspan="3">Nama</th>
                                 <th scope="col">Mutu Kerja</th>
                                 <th scope="col">Tanggung Jawab</th>
-                                <th scope="col">Inisiatif</th>
-                                <th scope="col">Kejujuran</th>
-                                <th scope="col">Absensi</th>
                                 <th scope="col">Aksi</th>
                               </tr>
                             </thead>
@@ -161,15 +147,6 @@ if(! isset($_SESSION['nip'])){
                                     <input type="number" min="1" max="100" name="tj" value="<?php echo $d['tanggung_jawab']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="in" value="<?php echo $d['inisiatif']; ?>" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
-                                    <input type="number" min="1" max="100" name="kj" value="<?php echo $d['kejujuran']; ?>" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
-                                    <input type="number" min="1" max="100" name="ab" value="<?php echo $d['absensi']; ?>" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
                                     <button type="submit" class="proses-btn btn btn-success float-right" <?php echo $disabled; ?>>SIMPAN</button>
                                 </td>
                                 </form>
@@ -191,10 +168,6 @@ if(! isset($_SESSION['nip'])){
                               <tr>
                                 <th scope="col">No.</th>
                                 <th scope="col" colspan="3">Nama</th>
-                                <th scope="col">Mutu Kerja</th>
-                                <th scope="col">Tanggung Jawab</th>
-                                <th scope="col">Inisiatif</th>
-                                <th scope="col">Kejujuran</th>
                                 <th scope="col">Absensi</th>
                                 <th scope="col">Aksi</th>
                               </tr>
@@ -226,18 +199,6 @@ if(! isset($_SESSION['nip'])){
                                 <input type="hidden" name="status" value="<?php echo $d['status']; ?>"/>
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
-                                <td>
-                                    <input type="number" min="1" max="100" name="mk" value="<?php echo $d['mutu_kerja']; ?>" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
-                                    <input type="number" min="1" max="100" name="tj" value="<?php echo $d['tanggung_jawab']; ?>" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
-                                    <input type="number" min="1" max="100" name="in" value="<?php echo $d['inisiatif']; ?>" <?php echo $disabled; ?>/>
-                                </td>
-                                <td>
-                                    <input type="number" min="1" max="100" name="kj" value="<?php echo $d['kejujuran']; ?>" <?php echo $disabled; ?>/>
-                                </td>
                                 <td>
                                     <input type="number" min="1" max="100" name="ab" value="<?php echo $d['absensi']; ?>" <?php echo $disabled; ?>/>
                                 </td>
