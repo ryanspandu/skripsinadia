@@ -106,7 +106,7 @@ include 'moora.php';
 <div class="d-flex flex-row justify-content-center mt-3">
     <img src="../assets/img/kmeans.png"/>
 </div>
-<h4 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Klasifikasi & Perangkingan Layak, Tidak Layak Moora</h4>
+<h4 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Perangkingan Layak & Tidak Layak Moora</h4>
 <p class="text-danger mb-1" style="font-style: italic;">*info</p>
 <p class="text-danger mb-0" style="font-style: italic;">Grade A : Bonus insentif 50% dari gaji</p>
 <p class="text-danger mb-0" style="font-style: italic;">Grade B : Bonus insentif 25% dari gaji</p>
