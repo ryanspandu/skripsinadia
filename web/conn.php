@@ -1,1 +1,1 @@
-<?php $conn = mysqli_connect("localhost","root","","aplikasi_moora"); ?>
+<?php $conn = mysqli_connect("localhost","redninja","Gajinya$99000","aplikasi_moora"); ?>

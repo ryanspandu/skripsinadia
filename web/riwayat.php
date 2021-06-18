@@ -82,7 +82,7 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="col" class="bg-kasi">Inisiatif</th>
                                 <th scope="col" class="bg-kasi">Kejujuran</th>
                                 <th scope="col" class="bg-kasubag">Absensi</th>
-                                <th scope="col">Aksi</th>
+                                <!-- <th scope="col">Aksi</th> -->
                               </tr>
                             </thead>
                             <tbody class="table-data">
@@ -102,23 +102,23 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td class="bg-kabid">
-                                    <input type="number" min="1" max="100" name="mk" placeholder="0 - 100" value="<?php echo $d['mutu_kerja']; ?>"/>
+                                    <input type="number" min="1" max="100" name="mk" placeholder="0 - 100" value="<?php echo $d['mutu_kerja']; ?>" disabled/>
                                 </td>
                                 <td class="bg-kabid">
-                                    <input type="number" min="1" max="100" name="tj" placeholder="0 - 100" value="<?php echo $d['tanggung_jawab']; ?>"/>
+                                    <input type="number" min="1" max="100" name="tj" placeholder="0 - 100" value="<?php echo $d['tanggung_jawab']; ?>" disabled/>
                                 </td>
                                 <td class="bg-kasi">
-                                    <input type="number" min="1" max="100" name="in" placeholder="0 - 100" value="<?php echo $d['inisiatif']; ?>"/>
+                                    <input type="number" min="1" max="100" name="in" placeholder="0 - 100" value="<?php echo $d['inisiatif']; ?>" disabled/>
                                 </td>
                                 <td class="bg-kasi">
-                                    <input type="number" min="1" max="100" name="kj" placeholder="0 - 100" value="<?php echo $d['kejujuran']; ?>"/>
+                                    <input type="number" min="1" max="100" name="kj" placeholder="0 - 100" value="<?php echo $d['kejujuran']; ?>" disabled/>
                                 </td>
                                 <td class="bg-kasubag">
-                                    <input type="number" min="1" max="100" name="ab" placeholder="0 - 100" value="<?php echo $d['absensi']; ?>"/>
+                                    <input type="number" min="1" max="100" name="ab" placeholder="0 - 100" value="<?php echo $d['absensi']; ?>" disabled/>
                                 </td>
-                                <td>
+                                <!-- <td>
                                     <button type="submit" class="proses-btn btn btn-success float-right">SIMPAN</button>
-                                </td>
+                                </td> -->
                                 </form>
                               </tr>
                               <?php } ?>
