@@ -104,7 +104,7 @@ include 'moora.php';
         </table>
 </div>
 <div class="d-flex flex-row justify-content-center mt-3">
-    <img src="../assets/img/kmeans.png"/>
+    <!-- <?php include 'manual/grafik_kmeans.php'; ?> -->
 </div>
 <h4 class="mb-3 mt-5" style="color:rgb(85, 103, 117);">Perangkingan Layak & Tidak Layak Moora</h4>
 <p class="text-danger mb-1" style="font-style: italic;">*info</p>
@@ -146,7 +146,7 @@ include 'moora.php';
         <tbody class="table-data">
         <?php
         // echo count($hasil_moora['layak'])/3;
-        $gradeA = count($hasil_moora['layak'])/3;
+        $gradeA = count($hasil_moora['layak'])/3+1;
         $gradeB = $gradeA*2;
         // $gradeC = $gradeA*3;
         // echo $gradeA.$gradeB;
