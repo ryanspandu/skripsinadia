@@ -7,6 +7,7 @@ include '../moora.php';
 
 // dd($karyawan_moora);
 
+// dd($hasil_moora);
 echo 'Lampiran 7. Perhitungan Optimasi Moora';
 echo '<br>';
 echo '<br>';
@@ -16,13 +17,13 @@ echo '<br>';
 echo '<br>';
 $i=0;
 foreach($karyawan_moora['layak'] as $l){
-    echo $l['kode'];
+    echo $hasil_moora['layak'][$i]['kode'];
     echo ' = ';
-    echo $l['mutu_kerja'].' + ';
-    echo $l['tanggung_jawab'].' + ';
+    echo '('.$l['tanggung_jawab'].' + ';
     echo $l['inisiatif'].' + ';
     echo $l['kejujuran'].' + ';
-    echo $l['absensi'].' = ';
+    echo $l['absensi'].') - ';
+    echo $l['mutu_kerja'].' = ';
     echo $hasil_moora['layak'][$i]['optimasi'];
     echo '<br>';
     $i++;
@@ -36,13 +37,13 @@ echo '<br>';
 echo '<br>';
 $i=0;
 foreach($karyawan_moora['tidak_layak'] as $l){
-    echo $l['kode'];
+    echo $hasil_moora['tidak_layak'][$i]['kode'];
     echo ' = ';
-    echo $l['mutu_kerja'].' + ';
-    echo $l['tanggung_jawab'].' + ';
+    echo '('.$l['tanggung_jawab'].' + ';
     echo $l['inisiatif'].' + ';
     echo $l['kejujuran'].' + ';
-    echo $l['absensi'].' = ';
+    echo $l['absensi'].') - ';
+    echo $l['mutu_kerja'].' = ';
     echo $hasil_moora['tidak_layak'][$i]['optimasi'];
     echo '<br>';
     $i++;

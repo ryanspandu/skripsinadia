@@ -27,14 +27,14 @@ function optimasi($data){
     foreach($data['layak'] as $d){
         $optimasi['layak'][$i]['nama'] = $d['nama'];
         $optimasi['layak'][$i]['kode'] = $d['kode'];
-        $optimasi['layak'][$i]['optimasi'] = $d['mutu_kerja']+$d['tanggung_jawab']+$d['inisiatif']+$d['kejujuran']+$d['absensi'];
+        $optimasi['layak'][$i]['optimasi'] = ($d['tanggung_jawab']+$d['inisiatif']+$d['kejujuran']+$d['absensi']) - $d['mutu_kerja'];
         $i++;
     }
     $i=1;
     foreach($data['tidak_layak'] as $d){
         $optimasi['tidak_layak'][$i]['nama'] = $d['nama'];
         $optimasi['tidak_layak'][$i]['kode'] = $d['kode'];
-        $optimasi['tidak_layak'][$i]['optimasi'] = $d['mutu_kerja']+$d['tanggung_jawab']+$d['inisiatif']+$d['kejujuran']+$d['absensi'];
+        $optimasi['tidak_layak'][$i]['optimasi'] = ($d['tanggung_jawab']+$d['inisiatif']+$d['kejujuran']+$d['absensi']) - $d['mutu_kerja'];
         $i++;
     }
 
