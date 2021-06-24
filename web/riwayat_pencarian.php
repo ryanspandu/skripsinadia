@@ -57,7 +57,7 @@ if(! isset($_SESSION['nip'])){
             <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">Riwayat Penilaian</h3>
             <div class="col-12">
                 <form class="px-4 d-flex flex-row" action="riwayat_pencarian.php" method="POST">
-                    <input type="search" placeholder="cari karyawan" class="form-control" name="keyword" autocomplete="off"/>
+                    <input type="search" placeholder="cari karyawan" class="form-control" name="keyword"/>
                     <button type="submit" class="btn btn-primary">Cari</button>
                 </form>
             </div>
@@ -94,12 +94,20 @@ if(! isset($_SESSION['nip'])){
                             <tbody class="table-data">
                             <?php
                                 include 'conn.php';
+                                $keyword = $_POST['keyword'];
+                                $query = "SELECT * FROM karyawan_kontrak WHERE nama like '%".$keyword."%'";
 
-                                $data = mysqli_query($conn,"SELECT * FROM karyawan_kontrak");
                                 $i = 1;
                                 $j = 1;
                                 $k = 1;
-                                while($d = mysqli_fetch_array($data)){ 
+                                $result = mysqli_query($conn, $query);
+
+                                if(!$result) {
+                                    die("Query Error : ".mysqli_errno($conn)." - ".mysqli_error($conn));
+                                }
+                                //kalau ini melakukan foreach atau perulangan
+                                if(mysqli_num_rows($result) != 0){
+                                    while ($d = mysqli_fetch_assoc($result)) {
                             ?>
                               <tr>
                                 <form action="proses/penilaian.php" method="POST">
@@ -127,7 +135,16 @@ if(! isset($_SESSION['nip'])){
                                 </td> -->
                                 </form>
                               </tr>
-                              <?php } ?>
+                              <?php 
+                              
+                                }
+                                }else{
+                                    ?>
+                                    <td colspan="12">Tidak ada karyawan dengan nama <?php echo $_POST['keyword']; ?></td>
+                                    <?php
+                                }
+                              
+                              ?>
                             </tbody>
                           </table>
                     </div>
