@@ -43,10 +43,20 @@ if(! isset($_SESSION['nip'])){
             <div class="row mt-4">
                 <h3 class="mb-3 px-5" style="color:rgb(85, 103, 117);">Data Karyawan</h3>
                 <div class="col-12 px-5">
+                <?php
+                if(isset($_SESSION['jabatan'])){
+                    $jabatan = $_SESSION['jabatan'];
+                }
+                if($jabatan == 'Admin'){
+                    $disabled = '';
+                    echo '<p class="text-success">(Anda Memiliki Akses)</p>';
+                }else{
+                    echo '<p class="text-danger">(Anda Tidak Memiliki Akses)</p>';
+                } ?>
                 <form action="proses/tambah.php" method="POST">
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Karyawan">
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Karyawan" <?php if($jabatan != 'Admin'){ echo 'disabled'; } ?>>
                     </div>
                     <!-- <div class="form-group">
                         <label for="">Mutu Kerja</label>
@@ -68,7 +78,8 @@ if(! isset($_SESSION['nip'])){
                         <label for="">Absensi</label>
                         <input type="number" min="0" max="100" class="form-control" name="ab" placeholder="0 - 100" >
                     </div> -->
-                    <button type="submit" class="simpan-kry-btn btn-lg btn-success float-right">SIMPAN</button>
+                    
+                    <button type="submit" class="simpan-kry-btn btn-lg btn-success float-right" <?php if($jabatan != 'Admin'){ echo 'disabled'; } ?>>SIMPAN</button>
                 </form>
                 </div>
                 
