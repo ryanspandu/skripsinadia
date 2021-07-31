@@ -82,10 +82,10 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="in" placeholder="0 - 100" value="<?php echo $d['inisiatif']; ?>" <?php echo $disabled; ?>/>
+                                    <input type="number" min="10" max="100" name="in" placeholder="10 - 100" class="minmxpenilaian" value="<?php echo $d['inisiatif']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="kj" placeholder="0 - 100" value="<?php echo $d['kejujuran']; ?>" <?php echo $disabled; ?>/>
+                                    <input type="number" min="10" max="100" name="kj" placeholder="10 - 100" class="minmxpenilaian" value="<?php echo $d['kejujuran']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
                                     <button type="submit" class="proses-btn btn btn-success float-right" <?php echo $disabled; ?>>SIMPAN</button>
@@ -141,10 +141,10 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="mk" placeholder="0 - 100" value="<?php echo $d['mutu_kerja']; ?>" <?php echo $disabled; ?>/>
+                                    <input type="number" min="10" max="100" name="mk" placeholder="10 - 100" class="minmxpenilaian" value="<?php echo $d['mutu_kerja']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="tj" placeholder="0 - 100" value="<?php echo $d['tanggung_jawab']; ?>" <?php echo $disabled; ?>/>
+                                    <input type="number" min="10" max="100" name="tj" placeholder="10 - 100" class="minmxpenilaian" value="<?php echo $d['tanggung_jawab']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
                                     <button type="submit" class="proses-btn btn btn-success float-right" <?php echo $disabled; ?>>SIMPAN</button>
@@ -200,7 +200,7 @@ if(! isset($_SESSION['nip'])){
                                 <th scope="row"><?php echo $i++; ?></th>
                                 <td colspan="3" id="nama<?php echo $j++; ?>"><?php echo $d['nama']; ?></td>
                                 <td>
-                                    <input type="number" min="1" max="100" name="ab" placeholder="0 - 100" value="<?php echo $d['absensi']; ?>" <?php echo $disabled; ?>/>
+                                    <input type="number" min="10" max="100" name="ab" placeholder="10 - 100" class="minmxpenilaian" value="<?php echo $d['absensi']; ?>" <?php echo $disabled; ?>/>
                                 </td>
                                 <td>
                                     <button type="submit" class="proses-btn btn btn-success float-right" <?php echo $disabled; ?>>SIMPAN</button>
@@ -290,7 +290,18 @@ if(! isset($_SESSION['nip'])){
 </div>
 
 <script>
-
+$(document).ready(function(){
+    $('.minmxpenilaian').keyup(function(){
+        if($(this).val() > 100){
+            alert('Nilai tidak boleh melebihi 100');
+            $(this).val(100);
+        }
+        if($(this).val() < 10){
+            alert('Nilai tidak boleh kurang dari 10');
+            $(this).val(10);
+        }
+    })
+});
 </script>
 </body>
 </html>
